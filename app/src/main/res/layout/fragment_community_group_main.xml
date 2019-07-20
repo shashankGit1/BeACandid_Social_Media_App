@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:splitMotionEvents="false"
     android:layout_marginBottom="55dp"
     android:clipChildren="false"
     tools:context="in.becandid.app.becandid.ui.group.CommunityGroupFragment">
@@ -82,6 +83,7 @@
     </FrameLayout>
 
     <link.fls.swipestack.SwipeStack
+        android:splitMotionEvents="false"
         android:id="@+id/swipeStack"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
