@@ -206,6 +206,17 @@
 
     </LinearLayout>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_post_to_group"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        android:visibility="gone"
+        android:backgroundTint="@android:color/holo_orange_dark"
+        android:elevation="4dp"
+        android:src="@drawable/ic_add_white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 
     <FrameLayout
         android:id="@+id/activity_user_category_progress"

@@ -61,7 +61,6 @@ import timber.log.Timber;
 import static android.Manifest.permission.CAMERA;
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
-import static in.becandid.app.becandid.ui.base.Constants.explicitWords;
 
 public class PostActivity extends BaseActivity implements
         AdapterView.OnItemSelectedListener, View.OnClickListener, PostMvpView {
@@ -111,7 +110,13 @@ public class PostActivity extends BaseActivity implements
     /**
      * Static list to check for explicit words
      */
-
+    private static final List<String> explicitWords = new ArrayList<>(
+            Arrays.asList(
+                    "assholes", "nudes", "cum", "nudity", "nude", "fuck", "suck", "boobs", "porn",
+                    "sex", "horny", "nudes", "pussy", "dick", "anal", "masturbate", "fetish", "cock",
+                    "rape", "gangrape", "erect", "penis", "pedos", "pedophile", "bobs", "vagene", "slut",
+                    "bitch", "twat", "cunt")
+    );
 
     @Inject
     PostMvpPresenter<PostMvpView> mPresenter;
@@ -143,6 +148,10 @@ public class PostActivity extends BaseActivity implements
                 finish();
             }
         });
+        Intent intent = getIntent();
+
+        String group_name = intent.getStringExtra("POST_GROUP_NAME");
+        single.setText(group_name);
 
         create_post_circle.setOnClickListener(this);
         ic_action_image_upload.setOnClickListener(this);
@@ -415,7 +424,7 @@ public class PostActivity extends BaseActivity implements
                             if (isAdultContent(etPostDesc.getText().toString().toLowerCase())) {
                                 new AlertDialog.Builder(PostActivity.this)
                                         .setTitle("The post contains adult content!")
-                                        .setMessage("As per Google Guidelines, No adult content can posted publicly. Adult word found in your status : " + adultWord)
+                                        .setMessage("As per Google Guidelines, No adult content can posted publicly. Adult word found " + adultWord)
                                         .setCancelable(true)
                                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                             @Override
@@ -480,7 +489,7 @@ public class PostActivity extends BaseActivity implements
      */
     private boolean isAdultContent(String postDesc) {
         for (String str : explicitWords)
-            if (postDesc.contentEquals(str)){
+            if (postDesc.contains(str)){
                 adultWord = str;
                 return true;
             }
@@ -515,7 +524,7 @@ public class PostActivity extends BaseActivity implements
         //VERY_UNLIKELY, UNLIKELY, POSSIBLE, LIKELY, and VERY_LIKELY.
         uploading_image_loading.setVisibility(View.GONE);
 
-        if (response.getAdult() > 2){
+        if (response.getAdult() > 3){
 
             new AlertDialog.Builder(PostActivity.this)
                     .setTitle("Adult Content detected by our AI Cloud Software ?")
@@ -565,36 +574,25 @@ public class PostActivity extends BaseActivity implements
             String status;
 
             if (etPostDesc.getText().toString().isEmpty()){
-                status = " ";
+                status = "";
             } else {
                 status = etPostDesc.getText().toString();
 
             }
 
             try {
-                if (isAdultContent(etPostDesc.getText().toString().toLowerCase())) {
-                    new AlertDialog.Builder(PostActivity.this)
-                            .setTitle("The post contains adult content!")
-                            .setMessage("As per Google Guidelines, No adult content can posted publicly. Adult word found in your status : " + adultWord)
-                            .setCancelable(true)
-                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
+                mPresenter.postStatus(MySharedPreferences.getUserId(preferences), status, response.getLink(), GroupId, category_id,
+                        "", "1", isAdult);
 
-                                }
-                            })
-                            .show();
-                } else {
-                    mPresenter.postStatus(MySharedPreferences.getUserId(preferences), status, response.getLink(), GroupId, category_id,
-                            "", "1", isAdult);
-
-                    Intent intent02 = new Intent(PostActivity.this, DiscoverActivity.class);
-                    startActivity(intent02);
-
-                }
-                //   postStatus(locationValue);
+                //postStatus(response);
             } catch (Exception e) {
                 e.printStackTrace();
+            } finally {
+                //  if (selectedCategory) {
+                Intent intent02 = new Intent(PostActivity.this, DiscoverActivity.class);
+                startActivity(intent02);
+                //   }
+
             }
         }
 

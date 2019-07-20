@@ -1,5 +1,6 @@
 package in.becandid.app.becandid.ui.group;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -16,6 +17,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 import java.util.concurrent.TimeoutException;
@@ -32,6 +34,7 @@ import in.becandid.app.becandid.R;
 import in.becandid.app.becandid.ui.base.BaseActivity;
 import in.becandid.app.becandid.ui.base.Constants;
 import in.becandid.app.becandid.infrastructure.MySharedPreferences;
+import in.becandid.app.becandid.ui.userpost.PostActivity;
 import timber.log.Timber;
 
 public class UserGroupDetails extends BaseActivity implements OnLoadMoreListener, View.OnClickListener, UserGroupMvpView {
@@ -68,6 +71,9 @@ public class UserGroupDetails extends BaseActivity implements OnLoadMoreListener
     SimpleDraweeView category_back_image;
     SimpleDraweeView category_back_image_icon;
     CommunityGroupPojo responseGroup;
+    FloatingActionButton create_post_fab;
+
+    private Intent postActivityIntent;
 
     @Inject
     UserGroupMvpPresenter<UserGroupMvpView> mPresenter;
@@ -102,7 +108,7 @@ public class UserGroupDetails extends BaseActivity implements OnLoadMoreListener
         category_total_post_counter = (TextView)findViewById(R.id.category_total_post_counter);
         user_category_tag = (TextView)findViewById(R.id.user_category_tag);
         user_category_join = (TextView)findViewById(R.id.user_category_join);
-
+        create_post_fab = findViewById(R.id.fab_add_post_to_group);
         category_back_image_icon.setVisibility(View.GONE);
         user_category_edit.setVisibility(View.GONE);
 
@@ -110,7 +116,7 @@ public class UserGroupDetails extends BaseActivity implements OnLoadMoreListener
 
         progressFrame = findViewById(R.id.activity_user_category_progress);
         recyclerView = (RecyclerView) findViewById(R.id.user_category_recyclerview_other);
-
+        postActivityIntent = new Intent(this, PostActivity.class);
         Intent intent = getIntent();
         groupId = intent.getStringExtra(Constants.GROUPID);
         error_btn_retry = (Button) findViewById(R.id.error_btn_retry);
@@ -141,7 +147,6 @@ public class UserGroupDetails extends BaseActivity implements OnLoadMoreListener
                         currentPage = PAGE_START;
                         try {
                             mPresenter.getGroupPosts(groupId,  MySharedPreferences.getUserId(preferences), String.valueOf(currentPage));
-
                             //   getLatestPosts();
                             // loadFirstPage();
                         } catch (Exception e) {
@@ -165,6 +170,13 @@ public class UserGroupDetails extends BaseActivity implements OnLoadMoreListener
         }
 
         user_category_join.setOnClickListener(this);
+        create_post_fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(postActivityIntent);
+            }
+        });
+
         error_btn_retry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -394,9 +406,11 @@ public class UserGroupDetails extends BaseActivity implements OnLoadMoreListener
     }
 
 
+    @SuppressLint("RestrictedApi")
     @Override
     public void getGroupPosts(List<PostsModel> response) {
         progressFrame.setVisibility(View.GONE);
+        create_post_fab.setVisibility(View.VISIBLE);
      //   user_category_tag.setText(response.get(0).getCategory());
 
 //        toolbar.setTitle(response.get(0).getName());
@@ -430,6 +444,7 @@ public class UserGroupDetails extends BaseActivity implements OnLoadMoreListener
     public void getGroupSpecific(List<CommunityGroupPojo> response) {
         try {
             getSupportActionBar().setTitle(response.get(0).getGroupName());
+            postActivityIntent.putExtra("POST_GROUP_NAME", response.get(0).getGroupName());
         } catch (Exception ex){
             ex.printStackTrace();
         }
