@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.group.LoginCommunityGroupActivity">
+
+    <Button
+        android:id="@+id/buttonSwipeLeft_login"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="SKIP" />
+
+    <Button
+        android:id="@+id/buttonSwipeRight_login"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="120dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="55dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="JOIN" />
+
+    <Button
+        android:id="@+id/login_swipe_button_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/md_grey_500"
+        android:layout_marginBottom="15dp"
+        android:textColor="@color/white"
+        android:text="Next"
+        android:textSize="18sp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+
+        />
+
+
+    <include layout="@layout/error_layout" />
+
+    <ProgressBar
+        android:id="@+id/main_progress_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:visibility="gone"
+        android:id="@+id/community_Fragment_frame_login">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loading"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginBottom="70dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please Wait..."
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginBottom="40dp" />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+    <link.fls.swipestack.SwipeStack
+        android:id="@+id/swipeStack_login"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/buttonSwipeLeft_login"
+        android:padding="25dp"
+        app:stack_rotation="10"
+        app:stack_size="3" />
+
+</RelativeLayout>

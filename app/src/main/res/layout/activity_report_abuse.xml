@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/drawer_layout">
+
+
+        <include layout="@layout/include_toolbar3" />
+
+        <ScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:fillViewport="true">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <LinearLayout
+                    android:id="@+id/wrapper_settings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_rectangle"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="Take Action against Abusive Posts"
+                        android:textSize="18sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/white"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="Abusive Status Post you selected"
+                        android:textAppearance="?android:textAppearanceSmall"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Current status which the user wants to edit"
+                        android:textSize="18sp"
+                        android:layout_marginTop="5dp"
+                        android:maxLines="2"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/bg_rounded_rectangle_report"
+                        android:id="@+id/abuse_previous_status"
+                        android:padding="10dp"
+                        android:gravity="center"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:id="@+id/radio_group_report"
+                        android:layout_height="wrap_content">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:id="@+id/report_irrelevant"
+                            android:text=" Post is Irrelevant "/>
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/report_sexual"
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:text=" Post is Sexual or Pornographic"/>
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/report_bully"
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:text=" Report Bullying and Abusive"/>
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:id="@+id/report_imperson"
+                            android:text=" Report Impersonation "/>
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/report_spam"
+                            android:text=" Report Spam "/>
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:id="@+id/report_other"
+                            android:text=" Other "/>
+                    </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/report_abuse_reason"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:backgroundTint="@color/md_grey_500"
+                        android:layout_weight="1"
+                        android:visibility="gone"
+                        android:gravity="center"
+                        android:hint="Reason for Report Abuse" />
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/white"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Submit Complaint"
+                        android:id="@+id/submit_report"
+                        android:padding="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/new_toolbar_color"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+
+        </ScrollView>
+
+
+    </LinearLayout>

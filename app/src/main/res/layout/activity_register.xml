@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fb="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.login.RegisterActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/register_start">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="65dp"
+            android:layout_marginRight="55dp"
+            android:src="@drawable/login_header_logo"
+            android:id="@+id/layout_login_logo"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:id="@+id/voiceme_heading"
+            android:layout_below="@+id/layout_login_logo"
+            android:textSize="18sp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:text="CANDID"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/voiceme_heading"
+            android:layout_marginLeft="135dp"
+            android:layout_marginTop="5dp"
+            android:id="@+id/login_divider"
+            android:layout_marginRight="130dp"
+            android:background="@color/md_blue_grey_300"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:id="@+id/voiceme_subheading"
+            android:layout_below="@+id/login_divider"
+            android:textSize="14sp"
+            android:layout_marginTop="5dp"
+            android:text="JUST SAY IT"/>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:padding="13dp"
+            android:id="@+id/go_back"
+            android:layout_alignParentLeft="true"
+            android:background="@color/transparent"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="To Login, Select your Identity Provider"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="14sp"
+            android:layout_above="@+id/signin_with_google_btn"/>
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/signin_with_google_btn"
+            android:layout_width="240dp"
+            android:layout_alignParentBottom="true"
+            android:layout_height="48dp"
+            android:visibility="visible"
+            android:layout_marginBottom="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_above="@+id/signin_with_facebook_btn"
+            android:id="@+id/login_divider_or_left"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="220dp"
+            android:layout_marginBottom="5dp"
+            />
+
+
+        <TextView
+            android:text="or"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/signin_with_facebook_btn"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/login_divider_or" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginBottom="5dp"
+            android:layout_above="@+id/signin_with_facebook_btn"
+            android:id="@+id/login_divider_or_right"
+            android:layout_marginLeft="220dp"
+            android:layout_marginRight="60dp"
+            android:background="@color/md_blue_grey_700"/>
+
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/signin_with_facebook_btn"
+            android:layout_width="240dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="120dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/black"
+            android:id="@+id/disclaimer_login"
+            android:layout_marginLeft="70dp"
+            android:layout_marginBottom="95dp"
+            android:text="Disclaimer: You are anonymous inside App."
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/black"
+            android:id="@+id/facebookdonotpost"
+            android:layout_marginLeft="70dp"
+            android:layout_marginBottom="75dp"
+            android:text="This doesn't let the app post on Facebook"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/black"
+            android:id="@+id/app_terms"
+            android:layout_marginLeft="70dp"
+            android:layout_marginBottom="45dp"
+            android:text="I agree to the terms and Conditions"
+            android:layout_centerHorizontal="true"
+            />
+
+
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

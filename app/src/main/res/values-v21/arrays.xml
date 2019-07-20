@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="chat_dialog_array">
+        <item>Block user</item>
+        <item>Rename user</item>
+        <item>Delete Chat</item>
+    </string-array>
+
+
+    <array name="colors_filter">
+        <item name="All categories" type="color">#827f93</item>
+        <item name="13&#8211;17 age" type="color">#c467f4</item>
+        <item name="18&#8211;24 age" type="color">#3b9aee</item>
+        <item name="25&#8211;34 age" type="color">#9bc53d</item>
+        <item name="35&#8211;44 age" type="color">#f4a261</item>
+        <item name="45+ age" type="color">#1ed2bb</item>
+        <item name="Male" type="color">#778da9</item>
+        <item name="Female" type="color">#20bf55</item>
+        <item name="LGBT" type="color">#9f9fed</item>
+    </array>
+
+    <string-array name="job_titles">
+        <item>All categories</item>
+        <item>13&#8211;17 age</item>
+        <item>18&#8211;24 age</item>
+        <item>25&#8211;34 age</item>
+        <item>35&#8211;44 age</item>
+        <item>45+ age</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>LGBT</item>
+    </string-array>
+
+    <string-array name="user_age">
+        <item>13-17</item>
+        <item>18-24</item>
+        <item>25-34</item>
+        <item>35-44</item>
+        <item>45+</item>
+        <item>Unknown</item>
+    </string-array>
+
+
+    <string-array name="user_age_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+
+    <string-array name="user_gender">
+        <item>Male</item>
+        <item>Female</item>
+        <item>LGBT</item>
+        <item>Unknown</item>
+    </string-array>
+
+    <string-array name="user_gender_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="titles">
+        <item>Nav</item>
+        <item>Tab</item>
+        <item>Strip</item>
+    </string-array>
+
+    <string-array name="country_names">
+        <item>Facebook</item>
+        <item>Twitter</item>
+        <item>Google+</item>
+        <item>LinkedIn</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="country_codes">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="country_flags">
+        <item>@drawable/facebook_icon</item>
+        <item>@drawable/twitter_icon</item>
+        <item>@drawable/google_plus_icon</item>
+        <item>@drawable/linkedin_icon</item>
+        <item>@drawable/activity_new</item>
+    </string-array>
+
+
+        <string-array name="colors">
+            <item>#ff0000</item>
+            <item>#00ff00</item>
+            <item>#0000ff</item>
+        </string-array>
+
+    <integer-array name="androidcolors">
+        <item>@color/md_purple_400</item>
+        <item>@color/md_deep_purple_A400</item>
+        <item>@color/md_indigo_400</item>
+        <item>@color/md_indigo_A400</item>
+        <item>@color/md_purple_A400</item>
+        <item>@color/md_deep_purple_400</item>
+        <item>@color/md_red_400</item>
+        <item>@color/md_red_A400</item>
+        <item>@color/md_pink_400</item>
+        <item>@color/md_pink_A400</item>
+        <item>@color/md_blue_400</item>
+        <item>@color/md_blue_A400</item>
+        <item>@color/md_light_blue_400</item>
+        <item>@color/md_cyan_400</item>
+
+    </integer-array>
+
+    <color name="light_blue">#24cbba</color>
+    <color name="light_grey">#465163</color>
+    <color name="lighter_green">#9dcd46</color>
+    <color name="light_green">#5ac597</color>
+    <color name="light_orange">#d3832e</color>
+    <color name="light_dark_green">#147c41</color>
+    <color name="light_dark_purple">#48107f</color>
+    <color name="light_dark_yellow">#c1b11e</color>
+    <color name="light_lighter_purple">#9100a7</color>
+
+    <integer-array name="back_post_light">
+        <item>@color/light_blue</item>
+        <item>@color/light_grey</item>
+        <item>@color/lighter_green</item>
+        <item>@color/light_green</item>
+        <item>@color/light_orange</item>
+        <item>@color/light_dark_green</item>
+        <item>@color/light_dark_purple</item>
+        <item>@color/light_dark_yellow</item>
+        <item>@color/light_lighter_purple</item>
+
+    </integer-array>
+
+
+    <integer-array name="back_post_dark">
+    <item>@color/dark_blue</item>
+    <item>@color/dark_grey</item>
+    <item>@color/darkerr_green</item>
+    <item>@color/dark_green</item>
+    <item>@color/dark_orange</item>
+    <item>@color/darker_green</item>
+    <item>@color/light_darker_purple</item>
+    <item>@color/light_darker_yellow</item>
+    <item>@color/light_darker_light_purple</item>
+    </integer-array>
+
+</resources>

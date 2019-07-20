@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.group.CreateGroupTagActivity"
+    tools:showIn="@layout/activity_login_group_tag">
+
+    <TextView
+        android:id="@+id/choose_one_interest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Choose One Interest"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/group_interest_politics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_tag_big"
+        android:drawableLeft="@drawable/onboarding_tags_politics"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="Politics"
+        android:textColor="@color/md_grey_600"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toStartOf="@+id/group_interest_celebrities"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/choose_one_interest"
+
+        />
+
+    <TextView
+        android:id="@+id/group_interest_celebrities"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_tag_big"
+        android:drawableLeft="@drawable/onboarding_tags_celebrities"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="Celebrities"
+        android:textColor="@color/md_grey_600"
+        android:textSize="13sp"
+        app:layout_constraintStart_toEndOf="@+id/group_interest_politics"
+        app:layout_constraintTop_toBottomOf="@+id/choose_one_interest" />
+
+    <TextView
+        android:id="@+id/group_interest_women_issues"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_tag_big"
+        android:drawableLeft="@drawable/onboarding_tags_womens_issues"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="Women Issues"
+        android:textColor="@color/md_grey_600"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/group_interest_celebrities"
+        app:layout_constraintTop_toBottomOf="@+id/choose_one_interest" />
+
+
+    <TextView
+        android:id="@+id/group_interest_technology"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_tag_big"
+        android:drawableLeft="@drawable/onboarding_tags_technology"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="Technology"
+        android:textColor="@color/md_grey_600"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toStartOf="@+id/group_interest_fashion"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/group_interest_politics" />
+
+
+    <TextView
+        android:id="@+id/group_interest_fashion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_tag_big"
+        android:drawableLeft="@drawable/onboarding_tags_fashion"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="Fashion"
+        android:textColor="@color/md_grey_600"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toStartOf="@+id/group_interest_business"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/group_interest_technology"
+        app:layout_constraintTop_toBottomOf="@+id/group_interest_celebrities" />
+
+    <TextView
+        android:id="@+id/group_interest_business"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_tag_big"
+        android:drawableLeft="@drawable/onboarding_tags_business"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="Business"
+        android:textColor="@color/md_grey_600"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/group_interest_fashion"
+        app:layout_constraintTop_toBottomOf="@+id/group_interest_women_issues" />
+
+    <TextView
+        android:id="@+id/group_interest_school"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_tag_big"
+        android:drawableLeft="@drawable/onboarding_tags_school"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="School"
+        android:textColor="@color/md_grey_600"
+        android:textSize="13sp"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/group_interest_business" />
+
+    <TextView
+        android:id="@+id/group_interest_science"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_tag_big"
+        android:drawableLeft="@drawable/onboarding_tags_science"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="Science"
+        android:textColor="@color/md_grey_600"
+        android:textSize="13sp"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@+id/group_interest_school"
+        app:layout_constraintTop_toBottomOf="@+id/group_interest_business" />
+
+    <TextView
+        android:id="@+id/group_interest_art"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_tag_big"
+        android:drawableLeft="@drawable/onboarding_tags_art"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="Art"
+        android:textColor="@color/md_grey_600"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toStartOf="@+id/group_interest_music"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/group_interest_science"
+        app:layout_constraintTop_toBottomOf="@+id/group_interest_business" />
+
+    <TextView
+        android:id="@+id/group_interest_music"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_tag_big"
+        android:drawableLeft="@drawable/onboarding_tags_music"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="Music"
+        android:textColor="@color/md_grey_600"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/group_interest_art"
+        app:layout_constraintTop_toBottomOf="@+id/group_interest_business" />
+
+
+    <TextView
+        android:id="@+id/group_interest_lgbt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_tag_big"
+        android:drawableLeft="@drawable/onboarding_tags_lgbt"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="LGBT"
+        android:textColor="@color/md_grey_600"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toStartOf="@+id/group_interest_relationship"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/group_interest_school" />
+
+    <TextView
+        android:id="@+id/group_interest_relationship"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_tag_big"
+        android:drawableLeft="@drawable/onboarding_tags_relationships"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="Relationship"
+        android:textColor="@color/md_grey_600"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toStartOf="@+id/group_interest_sports"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/group_interest_lgbt"
+        app:layout_constraintTop_toBottomOf="@+id/group_interest_music" />
+
+    <TextView
+        android:id="@+id/group_interest_sports"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_tag_big"
+        android:drawableLeft="@drawable/onboarding_tags_sports"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="Sports"
+        android:textColor="@color/md_grey_600"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/group_interest_relationship"
+        app:layout_constraintTop_toBottomOf="@+id/group_interest_music" />
+
+    <TextView
+        android:id="@+id/group_interest_funny"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_tag_big"
+        android:drawableLeft="@drawable/onboarding_tags_funny"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="Funny"
+        android:textColor="@color/md_grey_600"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toStartOf="@+id/group_interest_confessions"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/group_interest_sports" />
+
+    <TextView
+        android:id="@+id/group_interest_confessions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_tag_big"
+        android:drawableLeft="@drawable/onboarding_tags_confessions"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="Confessions"
+        android:textColor="@color/md_grey_600"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toStartOf="@+id/group_interest_personal"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/group_interest_funny"
+        app:layout_constraintTop_toBottomOf="@+id/group_interest_sports" />
+
+    <TextView
+        android:id="@+id/group_interest_personal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_tag_big"
+        android:drawableLeft="@drawable/onboarding_tags_personal"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="Personal"
+        android:textColor="@color/md_grey_600"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/group_interest_confessions"
+        app:layout_constraintTop_toBottomOf="@+id/group_interest_sports" />
+
+    <TextView
+        android:id="@+id/group_interest_sex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_tag_big"
+        android:drawableLeft="@drawable/onboarding_tags_sex"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="Sex"
+        android:textColor="@color/md_grey_600"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toStartOf="@+id/group_interest_family"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@+id/group_interest_faith"
+        app:layout_constraintTop_toBottomOf="@+id/group_interest_personal" />
+
+
+    <TextView
+        android:id="@+id/group_interest_family"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_tag_big"
+        android:drawableLeft="@drawable/onboarding_tags_family"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="Family"
+        android:textColor="@color/md_grey_600"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toStartOf="@+id/group_interest_work"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/group_interest_sex"
+        app:layout_constraintTop_toBottomOf="@+id/group_interest_personal"
+
+        />
+
+    <TextView
+        android:id="@+id/group_interest_work"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_tag_big"
+        android:drawableLeft="@drawable/onboarding_tags_work"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="Work"
+        android:textColor="@color/md_grey_600"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/group_interest_family"
+        app:layout_constraintTop_toBottomOf="@+id/group_interest_personal" />
+
+    <TextView
+        android:id="@+id/group_interest_faith"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_tag_big"
+        android:drawableLeft="@drawable/onboarding_tags_faith"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="Faith"
+        android:textColor="@color/md_grey_600"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toStartOf="@+id/group_interest_sex"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/group_interest_personal" />
+
+
+    <TextView
+        android:id="@+id/group_interest_food"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_tag_big"
+        android:drawableLeft="@drawable/onboarding_tags_food"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="Food"
+        android:textColor="@color/md_grey_600"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toStartOf="@+id/group_interest_entertainment"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/group_interest_faith" />
+
+    <TextView
+        android:id="@+id/group_interest_entertainment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_tag_big"
+        android:drawableLeft="@drawable/onboarding_tags_entertainment"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="Entertainment"
+        android:textColor="@color/md_grey_600"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toStartOf="@+id/group_interest_photography"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/group_interest_food"
+        app:layout_constraintTop_toBottomOf="@+id/group_interest_sex" />
+
+
+    <TextView
+        android:id="@+id/group_interest_photography"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_tag_big"
+        android:drawableLeft="@drawable/onboarding_tags_photography"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="Photography"
+        android:textColor="@color/md_grey_600"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/group_interest_entertainment"
+        app:layout_constraintTop_toBottomOf="@+id/group_interest_faith" />
+
+    <TextView
+        android:id="@+id/group_interest_health"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_tag_big"
+        android:drawableLeft="@drawable/onboarding_tags_health"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="Health"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/md_grey_600"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toStartOf="@+id/group_interest_entertainment"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/group_interest_food" />
+
+    <TextView
+        android:id="@+id/group_interest_men_issues"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_tag_big"
+        android:drawableLeft="@drawable/onboarding_tags_mens_issues"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="Men Issues"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/md_grey_600"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toStartOf="@+id/group_interest_photography"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/group_interest_food"
+        app:layout_constraintTop_toBottomOf="@+id/group_interest_photography" />
+
+
+    <TextView
+        android:id="@+id/group_interest_teen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_tag_big"
+        android:drawableLeft="@drawable/onboarding_tags_teens"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="Teen"
+        android:textColor="@color/md_grey_600"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/group_interest_men_issues"
+        app:layout_constraintTop_toBottomOf="@+id/group_interest_photography" />
+
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="8dp"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/create_new_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

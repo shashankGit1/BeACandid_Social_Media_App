@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/message_rootview"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+        <include layout="@layout/include_toolbar3" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <in.becandid.app.becandid.chat_design.messages.MessagesList
+                android:id="@+id/messagesList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:incomingAvatarHeight="56dp"
+                app:incomingAvatarWidth="56dp"
+                android:layout_above="@+id/main_activity_emoji_bar"
+                app:outcomingTimeTextColor="@color/md_grey_500"/>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_above="@+id/main_activity_emoji_bar"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/warm_grey_two"/>
+
+
+
+            <LinearLayout
+                android:id="@+id/main_activity_emoji_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFF"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp">
+
+                <ImageButton
+                    android:id="@+id/chat_image"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/ic_add_attachment"
+                    tools:ignore="ContentDescription"/>
+
+                <EditText
+                    android:id="@+id/messageEmojiEdittext"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/white"
+                    android:imeOptions="actionSend"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:maxLines="3" />
+
+                <ImageButton
+                    android:id="@+id/emoji_send_message"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_action_send_now"
+                    tools:ignore="ContentDescription"/>
+            </LinearLayout>
+
+
+
+
+            <!--     <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_alignParentBottom="true"
+                     android:layout_marginBottom="2dp"
+                     android:visibility="gone"
+                     android:id="@+id/chat_message_below_button"
+                     android:orientation="horizontal">
+
+                     <ImageButton
+                         android:id="@+id/main_activity_emoji"
+                         android:layout_width="35dp"
+                         android:layout_height="35dp"
+                         android:layout_marginLeft="10dp"
+                         android:scaleType="centerCrop"
+                         app:srcCompat="@drawable/emoji_ios_category_people"
+                         tools:ignore="ContentDescription"/>
+
+
+
+                 </LinearLayout> -->
+
+
+        <!--    <com.stfalcon.chatkit.messages.MessageInput
+                android:id="@+id/input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                app:inputHint="Enter A Message"/> -->
+
+            <ProgressBar
+                android:id="@+id/activity_messages_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"/>
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:background="@color/white"
+                android:id="@+id/chat_details">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Loading"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="70dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Please Wait..."
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="40dp"
+                    />
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminateOnly="true"
+                    android:layout_gravity="center"/>
+            </FrameLayout>
+
+
+
+        </RelativeLayout>
+
+    </LinearLayout>

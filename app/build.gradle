@@ -1,0 +1,217 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.26.1'
+    }
+}
+apply plugin: 'com.android.application'
+//apply plugin: 'kotlin-android'
+apply plugin: 'io.fabric'
+
+//Load API Key information in from property file
+Properties props = new Properties()
+try {
+    props.load(file('fabric.properties.sample').newDataInputStream())
+} catch (Exception ex) {
+    //throw new GradleException("Missing fabric.properties, check the fabric.properties.sample file.");
+}
+
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+    mavenCentral()
+}
+
+// Uncomment if you want to use Java 8 syntax without switching to the Jack+Jill compilers
+//apply plugin: 'me.tatarka.retrolambda'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'VoicemeAlias'
+            keyPassword 'hemlata1'
+            storeFile file('/Users/harishuginval/Documents/beacandidkey.jks')
+            storePassword 'shambhavi12345'
+        }
+    }
+    sourceSets.main.jni.srcDirs = []
+    compileSdkVersion sdkVersion
+    buildToolsVersion buildToolsVrs
+    defaultConfig {
+        applicationId "in.becandid.app.becandid"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 182
+        versionName "162"
+        multiDexEnabled true
+        // missingDimensionStrategy 'minApi', 'minApi24'
+        buildConfigField "String", "BASE_URL", "\"https://beacandid.com/nYw5JUu2ne8nCbsP\""
+        buildConfigField("String", "API_KEY", "\"ABCXYZ123TEST\"")
+        buildConfigField "int", "USER_ID", "32812"
+
+        //  buildConfigField "int", "BASE_MASTER", "2"
+        signingConfig signingConfigs.config
+        compileOptions.incremental = false
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath true
+            }
+        }
+
+        dexOptions {
+            javaMaxHeapSize "4g"
+            preDexLibraries = false
+        }
+    }
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:1.3.9'
+    }
+    // If you want to use Java 8 syntax, you will need to first enable Retrolambda, then
+    //  change these values.
+    /* compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    } */
+    buildTypes {
+        debug {
+            shrinkResources false
+            minifyEnabled false
+            testCoverageEnabled = false
+            debuggable true
+            // applicationIdSuffix ".debug"
+            //   proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //  buildConfigField "String", "CONSUMER_KEY", "\"${props.getProperty("twitterConsumerKey")}\""
+            //   buildConfigField "String", "CONSUMER_SECRET", "\"${props.getProperty("twitterConsumerSecret")}\""
+            //   buildConfigField "String", "PARTNER_KEY", "\"${props.getProperty("twitterPartnerKey")}\""
+            /*
+            Commented for now can't find config file
+             */
+            //signingConfig signingConfigs.config
+        }
+        release {
+            shrinkResources false
+            minifyEnabled false
+            debuggable false
+            //   proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //   buildConfigField "String", "CONSUMER_KEY", "\"${props.getProperty("twitterConsumerKey")}\""
+            //   buildConfigField "String", "CONSUMER_SECRET", "\"${props.getProperty("twitterConsumerSecret")}\""
+            //   buildConfigField "String", "PARTNER_KEY", "\"${props.getProperty("twitterPartnerKey")}\""
+            /*
+            Commented for now can't find config file
+             */
+            lintOptions {
+                disable 'MissingTranslation'
+                checkReleaseBuilds false
+                abortOnError false
+            }
+            //signingConfig signingConfigs.config
+            signingConfig signingConfigs.config
+        }
+        packagingOptions {
+            exclude 'LICENSE.txt'
+            exclude 'META-INF/LICENSE.txt'
+            exclude 'META-INF/NOTICE.txt'
+            exclude 'META-INF/INDEX.LIST'
+            exclude 'META-INF/DEPENDENCIES.txt'
+            exclude 'META-INF/LICENSE'
+            exclude 'META-INF/NOTICE'
+            exclude 'META-INF/DEPENDENCIES'
+            //exclude duplicate butterknife and parceler libs
+            exclude 'META-INF/services/javax.annotation.processing.Processor'
+            exclude 'META-INF/rxjava.properties'
+            exclude 'META-INF/license.txt'
+            exclude 'META-INF/notice.txt'
+            exclude 'META-INF/ASL2.0'
+            exclude 'META-INF/proguard/androidx-annotations.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+
+    //implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    //  implementation project(':autocomplete')
+
+    // implementation project(':filter')
+
+    // working adding of library  implementation project(path: ':filter', configuration: 'default')
+    implementation('com.crashlytics.sdk.android:crashlytics:2.9.8@aar') {
+        transitive = true;
+    }
+
+    // implementation 'com.writingminds:FFmpegAndroid:0.3.2' library to compress audio
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.browser:browser:1.0.0'
+    implementation 'androidx.vectordrawable:vectordrawable-animated:1.0.0'
+    implementation 'androidx.exifinterface:exifinterface:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'com.google.android.gms:play-services-ads:17.1.2'
+    implementation 'com.google.firebase:firebase-database:16.0.5'
+    implementation 'com.google.firebase:firebase-auth:16.1.0'
+    implementation "com.google.firebase:firebase-core:${firebaseLibVersion}"
+    implementation 'com.google.firebase:firebase-messaging:17.3.4'
+    implementation "com.google.android.gms:play-services-analytics:${firebaseLibVersion}"
+    androidTestImplementation 'junit:junit:4.12'
+    implementation 'com.hbb20:ccp:2.1.0'
+    implementation 'com.google.android:flexbox:1.0.0'
+    implementation 'com.github.siyamed:android-shape-imageview:0.9.3'
+    implementation 'androidx.multidex:multidex:2.0.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.14.2'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.2'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+    implementation 'com.github.yalantis:ucrop:2.2.2-native'
+    implementation 'com.facebook.fresco:fresco:2.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.github.Cutta:TagView:1.3'
+  //  implementation 'com.rockerhieu.emojicon:library:1.3.1'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+  //  implementation 'com.vanniktech:emoji-one:0.4.0'
+    implementation 'com.github.angads25:toggle:1.0.0'
+    implementation 'link.fls:swipestack:0.3.0'
+    annotationProcessor 'com.mindorks.android:placeholderview-compiler:1.0.2'
+
+    //  implementation 'com.joanfuentes:HintCase:1.0.4'
+    implementation 'com.facebook.android:facebook-login:5.1.0'
+
+    //  implementation 'com.github.Yalantis:SearchFilter:v1.0.4'
+    implementation 'com.jaredrummler:material-spinner:1.3.0'
+
+    // dagger dependency
+    implementation 'com.google.dagger:dagger:2.20'
+    annotationProcessor "com.google.dagger:dagger-compiler:2.20"
+    compileOnly 'javax.annotation:jsr250-api:1.0'
+    implementation 'javax.inject:javax.inject:1'
+    implementation 'com.jakewharton.rxrelay2:rxrelay:2.1.0'
+    implementation 'com.amitshekhar.android:rx2-android-networking:1.0.2'
+
+    // butterknife
+    implementation 'com.jakewharton:butterknife:10.1.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+
+    //fonts
+
+    //  implementation 'io.github.inflationx:calligraphy3:3.0.0'
+    // implementation 'io.github.inflationx:viewpump:1.0.0'
+}
+
+// ADD THIS AT THE BOTTOM
+apply plugin: 'com.google.gms.google-services'

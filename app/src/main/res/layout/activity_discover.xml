@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.discover.DiscoverActivity">
+
+
+    <include layout="@layout/content_discover" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        app:labelVisibilityMode="labeled"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:menu="@menu/navigation" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:elevation="6dp"
+        app:backgroundTint="#fff"
+        app:borderWidth="5dp"
+        android:id="@+id/fab"
+        android:layout_gravity="bottom|center_horizontal"
+        />
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

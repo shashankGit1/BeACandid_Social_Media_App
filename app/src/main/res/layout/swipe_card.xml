@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    card_view:cardCornerRadius="@dimen/card_corner_radius"
+    card_view:cardElevation="@dimen/elevation_large">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/gradient_bg"
+        android:layout_height="match_parent">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/community_group_image"
+            fresco:placeholderImage="@color/md_grey_600"
+            android:foreground="@drawable/gradient_bg"
+            android:scaleType="fitCenter"
+            android:src="@color/md_grey_600"
+            />
+
+        <TextView
+            android:id="@+id/textViewCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:text="@string/dummy_text"/>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_above="@+id/group_tags_01"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:id="@+id/members_in_group"
+            android:text="0 members 0 posts"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_above="@+id/group_details"
+            android:layout_marginRight="5dp"
+            android:id="@+id/group_tags_01"
+            android:background="@drawable/swipe_card_hashtags"
+            android:textColor="@color/white"
+            android:padding="10dp"
+            android:text="Technology"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/group_details"
+            android:layout_toEndOf="@+id/group_tags_01"
+            android:layout_marginRight="5dp"
+            android:id="@+id/group_tags_02"
+            android:visibility="gone"
+            android:background="@drawable/swipe_card_hashtags"
+            android:textColor="@color/white"
+            android:padding="10dp"
+            android:text="School"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/group_details"
+            android:layout_toEndOf="@+id/group_tags_02"
+            android:layout_marginRight="5dp"
+            android:id="@+id/group_tags_03"
+            android:background="@drawable/swipe_card_hashtags"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            android:padding="10dp"
+            android:text="Health"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/white"
+            android:layout_marginRight="20dp"
+            android:maxLines="2"
+            android:id="@+id/group_details"
+            android:padding="10dp"
+            android:text="Sample text written on top of the card."
+            />
+
+    </RelativeLayout>
+
+
+
+
+</androidx.cardview.widget.CardView>

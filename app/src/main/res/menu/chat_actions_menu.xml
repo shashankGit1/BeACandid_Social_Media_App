@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_copy"
+        android:icon="@drawable/ic_action_copy"
+        android:title="COPY"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_delete"
+        android:icon="@drawable/ic_action_delete"
+        android:title="DELETE"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/go_to_post"
+        android:icon="@drawable/ic_link_black_24dp"
+        android:title="POST ID"
+        app:showAsAction="always"/>
+
+
+
+
+
+</menu>

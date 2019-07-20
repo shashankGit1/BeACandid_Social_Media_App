@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:layout="@layout/toolbar_setting" />
+
+    <PreferenceCategory android:title="General User Info">
+
+        <ListPreference
+            android:defaultValue="6"
+            android:dialogTitle="User Age Range"
+            android:entries="@array/user_age"
+            android:entryValues="@array/user_age_values"
+            android:key="key_user_age"
+            android:summary="Current age range"
+            android:title="User Age Range" />
+
+        <ListPreference
+            android:defaultValue="4"
+            android:dialogTitle="User Gender"
+            android:entries="@array/user_gender"
+            android:entryValues="@array/user_gender_values"
+            android:key="key_user_gender"
+            android:summary="Current Gender"
+            android:title="User Gender" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="App Related Settings">
+
+        <Preference android:title="Fix Notification"
+            android:key="updateUserTokenButton"
+            android:summary="Tap Here Once to Fix Notification"/>
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="key_adult_filter"
+            android:summary="Show filter for Adult Content"
+            android:title="Adult Filter 18+" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:summary="Block your profile from Gender and Age related Search Results (Coming Soon)"
+            android:key="key_exclude_premium_search"
+            android:title="Block Premium Search" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="About Us">
+
+        <Preference
+            android:selectable="false"
+            android:summary="We are a team of 2 individuals, working towards restoring our old Candid Community Back." />
+
+     <!--   <Preference
+            android:summary="app_version"
+            android:title="App Version" /> -->
+
+        <Preference
+            android:key="key_send_feedback"
+            android:summary="Contact us directly"
+            android:title="Send Feedback" />
+
+        <!-- preference opens url in browser -->
+     <!--   <Preference
+            android:summary="summary_faq"
+            android:title="title_faq">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="url_faq" />
+        </Preference> -->
+
+        <Preference android:title="Privacy Policy">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://beacandid.com/privacy_policy.html" />
+        </Preference>
+
+      <!--  <Preference android:title="title_terms">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="url_terms" />
+        </Preference> -->
+    </PreferenceCategory>
+</PreferenceScreen>
+
+    <!-- <EditTextPreference
+                android:defaultValue="@string/default_gallery_storage"
+                android:key="@string/key_gallery_name"
+                android:summary="@string/default_gallery_storage"
+                android:title="@string/title_gallery_storage" />
+
+            <CheckBoxPreference
+                android:defaultValue="true"
+                android:key="@string/key_upload_over_wifi"
+                android:summary="@string/summary_upload_over_wifi"
+                android:title="@string/title_auto_upload" />
+
+            <ListPreference
+                android:defaultValue="3"
+                android:dialogTitle="@string/title_upload_quality"
+                android:entries="@array/pref_upload_quality_entries"
+                android:entryValues="@array/pref_upload_quality_values"
+                android:key="@string/key_upload_quality"
+                android:summary="@string/summary_upload_video_quality"
+                android:title="@string/title_upload_quality" />
+
+
+
+            <SwitchPreference
+                android:defaultValue="true"
+                android:key="@string/notifications_new_message"
+                android:title="@string/title_new_notification_sound" />
+
+            <RingtonePreference
+                android:defaultValue="content://settings/system/notification_sound"
+                android:dependency="notifications_new_message"
+                android:key="@string/key_notifications_new_message_ringtone"
+                android:ringtoneType="notification"
+                android:summary="@string/summary_choose_ringtone"
+                android:title="@string/pref_title_ringtone" />
+
+            <SwitchPreference
+                android:defaultValue="true"
+                android:key="@string/key_vibrate"
+                android:summary="@string/summary_vibrate"
+                android:title="@string/title_vibrate" /> -->

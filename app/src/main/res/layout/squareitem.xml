@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<in.becandid.app.becandid.ui.SquareLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/group_box_back"
+    android:layout_height="wrap_content" >
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/icon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        fresco:placeholderImage="@color/md_grey_600"
+        />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/members_in_group"
+        android:background="#fff"
+        android:text="text"
+        android:gravity="center_horizontal"
+        />
+
+    <TextView
+        android:id="@+id/members_in_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#fff"
+        android:text="text"
+        android:gravity="center_horizontal"
+        />
+
+</in.becandid.app.becandid.ui.SquareLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            >
+
+         <!--   <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/backnew"/> -->
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs_main_activity"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/md_grey_100"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="@color/new_toolbar_color"
+                app:tabMode="fixed"
+                app:tabIndicatorHeight="3dp"
+                app:tabPaddingStart="0dp"
+                app:tabPaddingEnd="0dp"
+                app:tabSelectedTextColor="@color/new_toolbar_color"
+                app:tabTextColor="@color/black" />
+
+
+
+         <!--   <com.ogaclejapan.smarttablayout.SmartTabLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/tabs_main_activity"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:paddingBottom="4dp"
+                app:stl_defaultTabTextColor="@color/white"
+                app:stl_distributeEvenly="true"
+                app:stl_indicatorColor="@color/new_toolbar_color"
+                app:stl_indicatorCornerRadius="1.5dp"
+                app:stl_indicatorInterpolation="smart"
+                app:stl_indicatorThickness="3dp"
+                app:stl_underlineColor="@color/transparent"
+                /> -->
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewpager_main_activity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tabs_main_activity"
+                android:layout_margin="5dp"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>

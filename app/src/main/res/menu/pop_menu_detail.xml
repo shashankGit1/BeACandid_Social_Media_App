@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <group
+            android:id="@+id/main_menu_group_details">
+                <item android:id="@+id/edit_post"
+                    android:title="Edit"
+                    app:showAsAction="never"/>
+        </group>
+
+        <item
+            android:id="@+id/report_post"
+            android:title="Report Abuse"/>
+
+        <item
+            android:id="@+id/send_message_menu"
+            android:title="Private Message"/>
+
+      <!--  <item
+            android:id="@+id/block_user_menu"
+            android:title="Block User"/> -->
+
+    <item
+            android:id="@+id/menu_item_share"
+            app:showAsAction="never"
+            android:title="Share" />
+
+
+</menu>

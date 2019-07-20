@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1094859743023",
+    "firebase_url": "https://tokyo-amphora-240111.firebaseio.com",
+    "project_id": "tokyo-amphora-240111",
+    "storage_bucket": "tokyo-amphora-240111.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1094859743023:android:78c5e999edbb7004",
+        "android_client_info": {
+          "package_name": "in.becandid.app.becandid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1094859743023-mmj3u2dj8ovl6th76b9erfc8r7p5h8s3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAV4L9rIwes5G5WEQQJ0VLk1I7gSQKCprc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1094859743023-mmj3u2dj8ovl6th76b9erfc8r7p5h8s3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

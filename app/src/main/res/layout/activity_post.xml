@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/llTopView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/uploading_image_loading"/>
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/new_toolbar_color"
+            android:titleTextColor="#ffffff">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ivBackArrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_back" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Create POST"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+            </FrameLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            android:id="@+id/spinner_frame"
+            android:background="@color/white"
+            android:padding="5dp">
+
+            <EditText
+                android:id="@+id/single"
+                android:hint="Search Your Joined Groups here"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="10dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center"
+                android:id="@+id/create_post_circle"
+                android:src="@drawable/ic_add_more_circle" />
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.4dp"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_frame"
+            android:id="@+id/divider_view"
+            android:alpha="0.5"
+            android:background="@android:color/black" />
+
+        <TextView
+            android:id="@+id/tvCountOfPostDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0/1000"
+            android:maxLength="1000"
+            app:layout_constraintRight_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider_view"
+            android:layout_gravity="right"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="6dp"
+            android:textSize="18sp"/>
+
+        <EditText
+            android:id="@+id/etPostDesc"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="7dp"
+            android:layout_gravity="center|left"
+            android:gravity="start"
+            app:layout_constraintTop_toBottomOf="@+id/tvCountOfPostDesc"
+            android:background="@drawable/bg_rounded_facebook"
+            android:hint="Speak freely"
+            android:inputType="textMultiLine|textAutoComplete|textAutoCorrect"
+            android:padding="10dp"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/ic_action_image_upload"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="left"
+            android:src="@drawable/add_photo_album"
+            app:layout_constraintTop_toBottomOf="@+id/etPostDesc"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <com.github.angads25.toggle.LabeledSwitch
+            android:id="@+id/switchbutton_post_status"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toRightOf="@+id/ic_action_image_upload"
+            app:layout_constraintTop_toBottomOf="@+id/etPostDesc"
+            android:textSize="12sp"
+            android:layout_marginLeft="20dp"
+            app:on="false"
+            app:textOn="ADULT ON"
+            app:textOff="ADULT OFF"
+            app:colorBorder="@color/colorAccent"/>
+
+
+
+        <Button
+            android:id="@+id/btPost"
+            android:layout_width="120dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="100dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etPostDesc"
+            android:background="@android:color/holo_orange_dark"
+            android:fontFamily="sans-serif"
+            app:layout_constraintLeft_toRightOf="@+id/ic_action_image_upload"
+            android:layout_gravity="end"
+            android:text="Post"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:id="@+id/status_group_post">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loading"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginBottom="70dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please Wait..."
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginBottom="40dp"
+            />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+
+</RelativeLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <item android:id="@+id/subscribe_menu"
+        android:title="SUBSCRIBE"
+        android:icon="@drawable/ic_subscribe_notification"
+        android:orderInCategory="100"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/post_pending"
+        android:title="POST"
+        android:icon="@drawable/ic_edit"
+        android:orderInCategory="200"
+        app:showAsAction="always" />
+</menu>

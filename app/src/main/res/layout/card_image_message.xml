@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardPreventCornerOverlap="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:background="@android:color/transparent" >
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/iv_user_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="8dp"
+            android:scaleType="centerCrop"
+            fresco:placeholderImage="@drawable/user" />
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginRight="10dp"
+            android:singleLine="true"
+            android:text="Username"
+            android:layout_marginLeft="4dp"
+            android:layout_toEndOf="@id/iv_user_image"
+            android:layout_toRightOf="@id/iv_user_image"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_user_name_your_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginRight="5dp"
+            android:singleLine="true"
+            android:textColor="@color/md_blue_300"
+            android:visibility="invisible"
+            android:text="YOU"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@id/tv_user_name"
+            android:layout_toRightOf="@id/tv_user_name"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/comment_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginRight="25dp"
+            android:text="Time"
+            android:layout_marginTop="3dp"
+            android:layout_below="@id/tv_user_name"
+            android:layout_toEndOf="@id/iv_user_image"
+            android:layout_toRightOf="@id/iv_user_image" />
+
+
+        <TextView
+            android:id="@+id/tv_message_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:text="Comment"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="2dp"
+            android:layout_below="@id/comment_time"
+            android:layout_toEndOf="@id/iv_user_image"
+            android:layout_toRightOf="@id/iv_user_image" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/comment_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:layout_toEndOf="@id/iv_user_image"
+            android:layout_toRightOf="@id/iv_user_image"
+            android:layout_marginEnd="25dp"
+            android:layout_marginRight="25dp"
+            app:layout_constraintDimensionRatio="H,3:4"
+            android:layout_below="@id/tv_message_card"
+            android:layout_marginTop="2dp"
+            fresco:actualImageScaleType="fitCenter"
+            android:gravity="center"
+            fresco:placeholderImage="@drawable/picture"
+            android:background="@color/transparent"
+            />
+
+        <ImageView
+            android:id="@+id/comment_more"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_more_grey" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/card_reply_linearlayout"
+            android:layout_below="@+id/comment_image"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/like_below_comment_direct"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/like_new_post"
+                />
+
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="left"
+                android:id="@+id/like_below_comment_counter"
+                android:text="0"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/like_below_comment_reply"
+                android:text="Reply"/>
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_below="@+id/card_reply_linearlayout"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/reply_comment_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="5dp"
+                    android:paddingLeft="@dimen/activity_horizontal_margin" >
+
+                </androidx.recyclerview.widget.RecyclerView>
+            </FrameLayout>
+
+        </ScrollView>
+
+        <FrameLayout
+            android:id="@+id/messageReplyProgress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:visibility="gone"
+            android:clickable="true">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminate="true" />
+        </FrameLayout>
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>

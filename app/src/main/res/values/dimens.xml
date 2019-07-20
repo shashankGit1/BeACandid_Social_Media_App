@@ -1,0 +1,82 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="payload_item_card_corner_radius">4dp</dimen>
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="img_width_height">100dp</dimen>
+    <dimen name="app_padding">5dp</dimen>
+    <dimen name="app_margin">5dp</dimen>
+    <dimen name="card_corner_radius">6dp</dimen>
+    <dimen name="search_icon_padding">12dp</dimen>
+    <dimen name="search_view_text_padding">65dp</dimen>
+
+    <dimen name="underline_top_spacing">8dp</dimen>
+    <dimen name="underline_bottom_spacing">4dp</dimen>
+    <dimen name="error_label_spacing">12dp</dimen>
+
+    <dimen name="floating_label_top_spacing">4dp</dimen>
+    <dimen name="floating_label_bottom_spacing">8dp</dimen>
+    <dimen name="floating_label_inside_spacing">12dp</dimen>
+
+    <dimen name="right_left_spinner_padding">8dp</dimen>
+    <dimen name="label_text_size">12sp</dimen>
+    <dimen name="min_content_height">20dp</dimen>
+
+    <dimen name="ms_text_size">18sp</dimen>
+    <dimen name="ms_text_margin">3dp</dimen>
+
+    <dimen name="ms__padding_left">24dp</dimen>
+    <dimen name="ms__padding_top">12dp</dimen>
+    <dimen name="ms__item_height">48dp</dimen>
+    <dimen name="ms__popup_padding_left">24dp</dimen>
+    <dimen name="ms__popup_padding_top">12dp</dimen>
+
+    <dimen name="activity_margin">16dp</dimen>
+    <dimen name="activity_half_margin">8dp</dimen>
+    <dimen name="indicator_size">8dp</dimen>
+    <dimen name="section_image_item">128dp</dimen>
+
+    <dimen name="margin_fab">16dp</dimen>
+    <dimen name="padding_normal">8dp</dimen>
+    <dimen name="padding_swipestack">64dp</dimen>
+
+    <dimen name="elevation_normal">4dp</dimen>
+    <dimen name="elevation_large">8dp</dimen>
+
+    <dimen name="input_button_width">36dp</dimen>
+    <dimen name="input_button_height">36dp</dimen>
+    <dimen name="input_button_margin">16dp</dimen>
+    <dimen name="input_text_size">17sp</dimen>
+    <dimen name="input_padding_left">16sp</dimen>
+    <dimen name="input_padding_right">16sp</dimen>
+    <dimen name="input_padding_top">8sp</dimen>
+    <dimen name="input_padding_bottom">8sp</dimen>
+
+    <dimen name="message_bubble_corners_radius">15dp</dimen>
+
+    <dimen name="dialog_avatar_width">56dp</dimen>
+    <dimen name="dialog_avatar_height">56dp</dimen>
+    <dimen name="dialog_last_message_avatar_width">24dp</dimen>
+    <dimen name="dialog_last_message_avatar_height">24dp</dimen>
+    <dimen name="dialog_title_text_size">18sp</dimen>
+    <dimen name="dialog_message_text_size">16sp</dimen>
+    <dimen name="dialog_date_text_size">14sp</dimen>
+    <dimen name="dialog_unread_bubble_text_size">13sp</dimen>
+    <dimen name="dialog_divider_margin_left">88dp</dimen>
+    <dimen name="dialog_divider_margin_right">0dp</dimen>
+
+    <dimen name="message_avatar_width">40dp</dimen>
+    <dimen name="message_avatar_height">40dp</dimen>
+    <dimen name="message_padding_left">16dp</dimen>
+    <dimen name="message_padding_right">16dp</dimen>
+    <dimen name="message_padding_top">16dp</dimen>
+    <dimen name="message_padding_bottom">16dp</dimen>
+    <dimen name="message_text_size">17sp</dimen>
+    <dimen name="message_time_text_size">14sp</dimen>
+    <dimen name="message_date_header_text_size">16sp</dimen>
+    <dimen name="message_date_header_padding">16dp</dimen>
+    <dimen name="message_incoming_bubble_margin_right">40dp</dimen>
+    <dimen name="message_outcoming_bubble_margin_left">88dp</dimen>
+</resources>
