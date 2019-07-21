@@ -112,7 +112,6 @@ public class PostActivity extends BaseActivity implements
      * Static list to check for explicit words
      */
 
-
     @Inject
     PostMvpPresenter<PostMvpView> mPresenter;
 
@@ -143,7 +142,6 @@ public class PostActivity extends BaseActivity implements
                 finish();
             }
         });
-
         Intent intent = getIntent();
 
         String group_name = intent.getStringExtra("POST_GROUP_NAME");
