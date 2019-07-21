@@ -8,7 +8,7 @@
     <dimen name="img_width_height">100dp</dimen>
     <dimen name="app_padding">5dp</dimen>
     <dimen name="app_margin">5dp</dimen>
-    <dimen name="card_corner_radius">6dp</dimen>
+    <dimen name="card_corner_radius">12dp</dimen>
     <dimen name="search_icon_padding">12dp</dimen>
     <dimen name="search_view_text_padding">65dp</dimen>
 

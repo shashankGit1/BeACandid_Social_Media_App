@@ -11,11 +11,12 @@
 
     <Button
         android:id="@+id/buttonSwipeLeft"
-        style="?android:attr/borderlessButtonStyle"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_alignParentBottom="true"
+        android:backgroundTint="@android:color/black"
+        android:textColor="@android:color/white"
         android:layout_alignParentLeft="true"
         android:text="SKIP" />
 
@@ -31,8 +32,9 @@
 
     <Button
         android:id="@+id/buttonSwipeRight"
-        style="?android:attr/borderlessButtonStyle"
+        android:textColor="@android:color/white"
         android:layout_width="120dp"
+        android:backgroundTint="@android:color/holo_orange_dark"
         android:layout_marginRight="20dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -52,6 +54,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
+        android:translationZ="2dp"
         android:clickable="true"
         android:id="@+id/community_Fragment_frame_latest">
 
@@ -88,8 +91,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/buttonSwipeLeft"
-        android:padding="25dp"
-        app:stack_rotation="10"
+        android:padding="36dp"
+        app:stack_rotation="6"
         app:stack_size="3" />
 
 

@@ -11,7 +11,8 @@
 
     <Button
         android:id="@+id/buttonSwipeLeft"
-        style="?android:attr/borderlessButtonStyle"
+        android:backgroundTint="@android:color/black"
+        android:textColor="@android:color/white"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
@@ -31,7 +32,8 @@
 
     <Button
         android:id="@+id/buttonSwipeRight"
-        style="?android:attr/borderlessButtonStyle"
+        android:backgroundTint="@android:color/holo_orange_dark"
+        android:textColor="@android:color/white"
         android:layout_width="120dp"
         android:layout_marginRight="20dp"
         android:layout_height="wrap_content"
@@ -53,6 +55,7 @@
         android:layout_height="match_parent"
         android:background="@color/white"
         android:clickable="true"
+        android:translationZ="2dp"
         android:id="@+id/community_Fragment_frame">
 
         <TextView
@@ -88,8 +91,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/buttonSwipeLeft"
-        android:padding="25dp"
-        app:stack_rotation="10"
+        android:padding="36dp"
+        app:stack_rotation="6"
         app:stack_size="3" />
 
 
