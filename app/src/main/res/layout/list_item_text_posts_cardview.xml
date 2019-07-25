@@ -89,6 +89,7 @@
                     android:maxWidth="120dp"
                     android:includeFontPadding="false"
                     android:maxLines="1"
+                    android:textStyle="bold"
                     android:ellipsize="end"
                     android:padding="6dp"
                     android:textColor="#444"

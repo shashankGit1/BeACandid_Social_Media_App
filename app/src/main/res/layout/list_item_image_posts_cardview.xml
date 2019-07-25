@@ -85,6 +85,7 @@
                     android:includeFontPadding="false"
                     android:maxWidth="120dp"
                     android:maxLines="1"
+                    android:textStyle="bold"
                     android:padding="6dp"
                     android:text="category"
                     android:textColor="#444"
