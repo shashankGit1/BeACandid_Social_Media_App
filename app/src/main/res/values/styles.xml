@@ -10,7 +10,7 @@
     </style>
 
     <style name="BottomNavBar" parent="AppTheme">
-        <item name="colorControlHighlight">@android:color/holo_green_dark</item>
+        <item name="colorControlHighlight">@android:color/holo_orange_dark</item>
     </style>
 
     <style name="BlueTheme" parent="Theme.AppCompat.Light.NoActionBar">
