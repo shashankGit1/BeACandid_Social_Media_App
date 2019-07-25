@@ -9,6 +9,10 @@
         <item name="windowActionModeOverlay">true</item>
     </style>
 
+    <style name="BottomNavBar" parent="AppTheme">
+        <item name="colorControlHighlight">@android:color/holo_green_dark</item>
+    </style>
+
     <style name="BlueTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/cornflower_blue</item>
         <item name="colorPrimaryDark">@color/cornflower_blue_dark</item>

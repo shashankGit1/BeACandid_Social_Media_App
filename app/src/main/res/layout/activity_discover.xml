@@ -7,27 +7,28 @@
     android:fitsSystemWindows="true"
     tools:context=".ui.discover.DiscoverActivity">
 
-
     <include layout="@layout/content_discover" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="match_parent"
-        app:labelVisibilityMode="labeled"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        android:backgroundTint="@android:color/white"
+        android:elevation="2dp"
+        app:elevation="8dp"
+        app:itemIconSize="24dp"
+        app:itemIconTint="@drawable/bg_nav_bar_selector"
+        app:itemTextColor="@drawable/bg_nav_bar_selector"
+        app:labelVisibilityMode="labeled"
         app:menu="@menu/navigation" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        app:elevation="6dp"
-        app:backgroundTint="#fff"
-        app:borderWidth="5dp"
-        android:id="@+id/fab"
         android:layout_gravity="bottom|center_horizontal"
-        />
-
-
+        app:backgroundTint="#fff"
+        app:elevation="6dp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
