@@ -43,7 +43,7 @@
                 android:id="@+id/action_up_btn"
                 style="@style/MSV_ImageButton"
                 android:layout_centerVertical="true"
-                android:src="@drawable/ic_action_navigation_arrow_back"/>
+                android:src="@drawable/ic_action_back"/>
 
             <ImageButton
                 android:id="@+id/action_voice_btn"

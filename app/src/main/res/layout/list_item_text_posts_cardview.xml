@@ -5,7 +5,8 @@
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginTop="8dp"
     android:background="@android:color/white">
 
     <androidx.cardview.widget.CardView
@@ -13,6 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:elevation="8dp"
         card_view:cardCornerRadius="16dp">
 
         <RelativeLayout
@@ -27,10 +29,10 @@
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/list_item_posts_avatar_text"
-                    android:alpha="0.8"
                     android:layout_width="42dp"
                     android:layout_height="42dp"
                     android:layout_margin="4dp"
+                    android:alpha="0.7"
                     android:scaleType="fitCenter"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -85,15 +87,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_category"
-                    android:gravity="center"
-                    android:maxWidth="120dp"
-                    android:includeFontPadding="false"
-                    android:maxLines="1"
-                    android:textStyle="bold"
                     android:ellipsize="end"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:maxWidth="120dp"
+                    android:maxLines="1"
                     android:padding="6dp"
                     android:textColor="#444"
                     android:textSize="12sp"
+                    android:textStyle="bold"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -102,12 +104,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
+                    android:fontFamily="@font/quicksand_bold"
                     android:gravity="center"
                     android:maxLines="4"
                     android:minHeight="94dp"
                     android:padding="12dp"
                     android:textColor="@color/white"
-                    android:textSize="16sp"
+                    android:textSize="24sp"
                     app:layout_constraintTop_toBottomOf="@+id/list_item_posts_avatar_text" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -128,7 +131,7 @@
                     android:scaleType="fitCenter"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    fresco:placeholderImage="@drawable/heart_shape_outline" />
+                    fresco:placeholderImage="@drawable/ic_heart" />
 
                 <TextView
                     android:id="@+id/new_counter_like_number_text"
@@ -146,11 +149,11 @@
                     android:id="@+id/list_item_hug_button_text"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:layout_marginLeft="12dp"
                     android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="12dp"
                     android:padding="4dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/broken_candid"
+                    android:src="@drawable/ic_heart_broken"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toRightOf="@+id/new_counter_like_number_text"
                     app:layout_constraintStart_toEndOf="@+id/new_counter_like_number_text" />
@@ -171,11 +174,11 @@
                     android:id="@+id/emoji_above_comment_text"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:layout_marginLeft="12dp"
                     android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="12dp"
                     android:padding="4dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/comment_candid"
+                    android:src="@drawable/ic_comment"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toRightOf="@+id/new_counter_hug_number_text" />
 

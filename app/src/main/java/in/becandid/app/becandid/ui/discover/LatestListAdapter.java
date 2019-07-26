@@ -376,7 +376,7 @@ public class LatestListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 likeCounter++;
 
                 new_counter_like_number.setText(String.valueOf(NumberFormat.getIntegerInstance().format(likeCounter)));
-                likeButtonMain.setImageResource(R.drawable.heart_shape_outlinered);
+                likeButtonMain.setImageResource(R.drawable.ic_heart_red);
             }
 
         }
@@ -394,7 +394,7 @@ public class LatestListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             likeCounter--;
             like_button_true = false;
             new_counter_like_number.setText(String.valueOf(NumberFormat.getIntegerInstance().format(likeCounter)));
-            likeButtonMain.setImageDrawable(itemView.getResources().getDrawable(R.drawable.heart_shape_outline));
+            likeButtonMain.setImageDrawable(itemView.getResources().getDrawable(R.drawable.ic_heart));
         }
 
 
@@ -418,7 +418,7 @@ public class LatestListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 //    sendHugToServer((VoicemeApplication) itemView.getContext().getApplicationContext(), 0,  "clicked hug button");
 
                 new_counter_hug_number.setText(String.valueOf(NumberFormat.getIntegerInstance().format(hugCounter)));
-                HugButtonMain.setImageDrawable(itemView.getResources().getDrawable(R.drawable.broken_candidred));
+                HugButtonMain.setImageDrawable(itemView.getResources().getDrawable(R.drawable.ic_heart_broken_red));
             }
         }
 
@@ -433,7 +433,7 @@ public class LatestListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             hug_button_true = false;
 
             new_counter_hug_number.setText(String.valueOf(NumberFormat.getIntegerInstance().format(hugCounter)));
-            HugButtonMain.setImageDrawable(itemView.getResources().getDrawable(R.drawable.broken_candid));
+            HugButtonMain.setImageDrawable(itemView.getResources().getDrawable(R.drawable.ic_heart_broken));
         }
 
         // Todo code to calculate text length - https://stackoverflow.com/questions/4794484/calculate-text-size-according-to-width-of-text-area
@@ -607,7 +607,7 @@ public class LatestListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 ((VoicemeApplication) itemView.getContext().getApplicationContext()).getBus().send(new Account.sendLikeNotify(dataItem.getIdPosts(), "1"));
 
                 new_counter_like_number.setText(String.valueOf(NumberFormat.getIntegerInstance().format(likeCounter)));
-                likeButtonMain.setImageResource(R.drawable.heart_shape_outlinered);
+                likeButtonMain.setImageResource(R.drawable.ic_heart_red);
             }
 
         }
@@ -621,7 +621,7 @@ public class LatestListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             likeCounter--;
             like_button_true = false;
             new_counter_like_number.setText(String.valueOf(NumberFormat.getIntegerInstance().format(likeCounter)));
-            likeButtonMain.setImageDrawable(itemView.getResources().getDrawable(R.drawable.heart_shape_outline));
+            likeButtonMain.setImageDrawable(itemView.getResources().getDrawable(R.drawable.ic_heart));
         }
 
         @Override
@@ -646,7 +646,7 @@ public class LatestListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 //  sendHugToServer((VoicemeApplication) itemView.getContext().getApplicationContext(), 0, "clicked hug button");
 
                 new_counter_hug_number.setText(String.valueOf(NumberFormat.getIntegerInstance().format(hugCounter)));
-                HugButtonMain.setImageDrawable(itemView.getResources().getDrawable(R.drawable.broken_candidred));
+                HugButtonMain.setImageDrawable(itemView.getResources().getDrawable(R.drawable.ic_heart_broken_red));
             }
         }
 
@@ -663,7 +663,7 @@ public class LatestListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
 
             new_counter_hug_number.setText(String.valueOf(NumberFormat.getIntegerInstance().format(hugCounter)));
-            HugButtonMain.setImageDrawable(itemView.getResources().getDrawable(R.drawable.broken_candid));
+            HugButtonMain.setImageDrawable(itemView.getResources().getDrawable(R.drawable.ic_heart_broken));
         }
 
         // Todo code to calculate text length - https://stackoverflow.com/questions/4794484/calculate-text-size-according-to-width-of-text-area

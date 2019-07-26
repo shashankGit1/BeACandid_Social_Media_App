@@ -46,7 +46,7 @@
                         android:layout_alignParentRight="true"
                         android:layout_marginTop="40dp"
                         android:layout_marginRight="30dp"
-                        android:src="@drawable/block"/>
+                        android:src="@drawable/ic_block"/>
 
                     <com.facebook.drawee.view.SimpleDraweeView
                         android:id="@+id/second_image"
