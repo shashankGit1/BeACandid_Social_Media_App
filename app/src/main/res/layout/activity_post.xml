@@ -2,198 +2,210 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/llTopView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <ProgressBar
+            android:id="@+id/uploading_image_loading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:id="@+id/uploading_image_loading"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.Toolbar
-            app:layout_constraintTop_toTopOf="parent"
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/new_toolbar_color"
-            android:titleTextColor="#ffffff">
+            android:layout_height="?android:attr/actionBarSize"
+            app:layout_constraintTop_toTopOf="parent">
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
 
                 <ImageView
                     android:id="@+id/ivBackArrow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_arrow_back" />
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_action_back"
+                    android:tint="@android:color/black" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Create POST"
-                    android:textColor="@android:color/white"
+                    android:text="Create Post"
+                    android:textColor="@android:color/black"
                     android:textSize="20sp" />
+
             </FrameLayout>
 
         </androidx.appcompat.widget.Toolbar>
 
-
-        <FrameLayout
+        <LinearLayout
+            android:id="@+id/spinner_frame"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            android:id="@+id/spinner_frame"
-            android:background="@color/white"
-            android:padding="5dp">
+            android:layout_margin="12dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
-            <EditText
-                android:id="@+id/single"
-                android:hint="Search Your Joined Groups here"
-                android:layout_width="300dp"
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:padding="10dp"/>
+                android:layout_weight="1"
+                android:backgroundTint="@color/grey_200"
+                android:elevation="6dp"
+                app:cardCornerRadius="4dp">
+
+                <EditText
+                    android:id="@+id/single"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="Search your groups"
+                    android:padding="10dp" />
+
+            </androidx.cardview.widget.CardView>
 
             <ImageView
+                android:id="@+id/create_post_circle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right|center"
-                android:id="@+id/create_post_circle"
-                android:src="@drawable/ic_add_more_circle" />
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/ic_add_circle"
+                android:tint="@android:color/holo_orange_dark" />
 
-        </FrameLayout>
+        </LinearLayout>
 
-        <View
+        <!--        <View-->
+        <!--            android:id="@+id/divider_view"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="0.4dp"-->
+        <!--            android:alpha="0.5"-->
+        <!--            android:background="@android:color/black"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/spinner_frame" />-->
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/tvCountOfPostDesc"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_gravity="right"-->
+        <!--            android:layout_marginTop="8dp"-->
+        <!--            android:layout_marginRight="6dp"-->
+        <!--            android:maxLength="1000"-->
+        <!--            android:text="0/1000"-->
+        <!--            android:textSize="18sp"-->
+        <!--            app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/spinner_frame" />-->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/etPostDescHolder"
             android:layout_width="match_parent"
-            android:layout_height="0.4dp"
-            app:layout_constraintTop_toBottomOf="@+id/spinner_frame"
-            android:id="@+id/divider_view"
-            android:alpha="0.5"
-            android:background="@android:color/black" />
-
-        <TextView
-            android:id="@+id/tvCountOfPostDesc"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0/1000"
-            android:maxLength="1000"
-            app:layout_constraintRight_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/divider_view"
-            android:layout_gravity="right"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="6dp"
-            android:textSize="18sp"/>
+            android:layout_margin="12dp"
+            android:backgroundTint="@color/grey_200"
+            android:elevation="6dp"
+            app:cardCornerRadius="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_frame">
 
-        <EditText
-            android:id="@+id/etPostDesc"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_margin="7dp"
-            android:layout_gravity="center|left"
-            android:gravity="start"
-            app:layout_constraintTop_toBottomOf="@+id/tvCountOfPostDesc"
-            android:background="@drawable/bg_rounded_facebook"
-            android:hint="Speak freely"
-            android:inputType="textMultiLine|textAutoComplete|textAutoCorrect"
-            android:padding="10dp"
-            android:textSize="16sp" />
+            <EditText
+                android:id="@+id/etPostDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:gravity="start"
+                android:hint="Speak freely"
+                android:inputType="textMultiLine|textAutoComplete|textAutoCorrect"
+                android:minHeight="300dp"
+                android:padding="12dp"
+                android:textSize="16sp" />
+
+        </androidx.cardview.widget.CardView>
 
         <ImageView
             android:id="@+id/ic_action_image_upload"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="10dp"
-            android:layout_gravity="left"
-            android:src="@drawable/add_photo_album"
-            app:layout_constraintTop_toBottomOf="@+id/etPostDesc"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_margin="12dp"
+            android:src="@drawable/ic_upload_image"
+            android:tint="@android:color/holo_orange_dark"
+            app:layout_constraintBottom_toBottomOf="@+id/btPost"
             app:layout_constraintLeft_toLeftOf="parent"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            app:layout_constraintTop_toTopOf="@+id/btPost" />
 
         <com.github.angads25.toggle.LabeledSwitch
             android:id="@+id/switchbutton_post_status"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_margin="12dp"
+            app:colorBorder="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="@+id/ic_action_image_upload"
             app:layout_constraintLeft_toRightOf="@+id/ic_action_image_upload"
-            app:layout_constraintTop_toBottomOf="@+id/etPostDesc"
-            android:textSize="12sp"
-            android:layout_marginLeft="20dp"
+            app:layout_constraintTop_toTopOf="@+id/ic_action_image_upload"
             app:on="false"
-            app:textOn="ADULT ON"
-            app:textOff="ADULT OFF"
-            app:colorBorder="@color/colorAccent"/>
-
-
+            app:textOff="Adult off"
+            app:textOn="Adult on" />
 
         <Button
             android:id="@+id/btPost"
-            android:layout_width="120dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="100dp"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etPostDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
             android:background="@android:color/holo_orange_dark"
-            android:fontFamily="sans-serif"
-            app:layout_constraintLeft_toRightOf="@+id/ic_action_image_upload"
-            android:layout_gravity="end"
             android:text="Post"
             android:textColor="@android:color/white"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etPostDescHolder" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <FrameLayout
+        android:id="@+id/status_group_post"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
         android:clickable="true"
-        android:id="@+id/status_group_post">
+        android:visibility="gone">
+
+        <!--        TODO: revert visibility -->
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Loading"
             android:layout_gravity="center"
-            android:textStyle="bold"
-            android:textSize="20sp"
             android:layout_marginBottom="70dp"
-            />
+            android:text="Loading"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Please Wait..."
             android:layout_gravity="center"
-            android:textStyle="bold"
-            android:textSize="20sp"
             android:layout_marginBottom="40dp"
-            />
+            android:text="Please Wait..."
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <ProgressBar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:indeterminate="true"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:indeterminate="true" />
     </FrameLayout>
 
 </RelativeLayout>
