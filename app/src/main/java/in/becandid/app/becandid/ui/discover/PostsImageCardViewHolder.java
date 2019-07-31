@@ -327,20 +327,20 @@ public abstract class PostsImageCardViewHolder extends BaseViewHolder implements
                     .into(user_avatar);
         } */
 
-        likeButtonMain.setImageResource(R.drawable.heart_shape_outline);
-        HugButtonMain.setImageResource(R.drawable.broken_candid);
+        likeButtonMain.setImageResource(R.drawable.ic_heart);
+        HugButtonMain.setImageResource(R.drawable.ic_heart_broken);
 
         if (dataItem.getUserLike() != null){
             if (dataItem.getUserLike()){
 
-                likeButtonMain.setImageResource(R.drawable.heart_shape_outlinered);
+                likeButtonMain.setImageResource(R.drawable.ic_heart_red);
 
-              //  likeButtonMain.setImageDrawable(itemView.getResources().getDrawable(R.drawable.heart_shape_outlinered));
+              //  likeButtonMain.setImageDrawable(itemView.getResources().getDrawable(R.drawable.ic_heart_red));
                 like_button_true = true;
                 //   likeButtonMain.setFavoriteResource(like_after);
             } else {
                 like_button_true = false;
-                likeButtonMain.setImageResource(R.drawable.heart_shape_outline);
+                likeButtonMain.setImageResource(R.drawable.ic_heart);
 
 
                 //   likeButtonMain.setFavoriteResource(like_before);
@@ -348,12 +348,12 @@ public abstract class PostsImageCardViewHolder extends BaseViewHolder implements
 
 
             if (dataItem.getUserHuge()){
-                HugButtonMain.setImageDrawable(itemView.getResources().getDrawable(R.drawable.broken_candidred));
+                HugButtonMain.setImageDrawable(itemView.getResources().getDrawable(R.drawable.ic_heart_broken_red));
 
                 hug_button_true = true;
             } else {
                 hug_button_true = false;
-                HugButtonMain.setImageResource(R.drawable.broken_candid);
+                HugButtonMain.setImageResource(R.drawable.ic_heart_broken);
 
             }
 

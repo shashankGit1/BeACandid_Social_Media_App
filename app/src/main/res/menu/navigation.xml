@@ -4,28 +4,26 @@
     <item
         android:id="@+id/navigation_feed"
         android:icon="@drawable/ic_format_align_left_black_24dp"
-        android:title="FEED" />
+        android:title="Feed" />
 
     <item
         android:id="@+id/navigation_groups"
         android:icon="@drawable/ic_star_black_24dp"
-        android:title="GROUPS" />
+        android:title="Groups" />
 
     <item
         android:id="@+id/navigation_post"
         android:icon="@drawable/ic_add_black_24dp"
-        android:title="POST" />
+        android:title="Post" />
 
     <item
         android:id="@+id/navigation_me"
         android:icon="@drawable/ic_person_black_24dp"
-        android:title="ME" />
+        android:title="Me" />
 
     <item
         android:id="@+id/navigation_activity"
         android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="CHAT" />
-
-
+        android:title="Chat" />
 
 </menu>
