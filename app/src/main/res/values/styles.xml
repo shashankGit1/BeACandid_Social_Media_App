@@ -9,6 +9,10 @@
         <item name="windowActionModeOverlay">true</item>
     </style>
 
+    <style name="BottomNavBar" parent="AppTheme">
+        <item name="colorControlHighlight">@android:color/holo_orange_dark</item>
+    </style>
+
     <style name="BlueTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/cornflower_blue</item>
         <item name="colorPrimaryDark">@color/cornflower_blue_dark</item>
@@ -114,7 +118,7 @@
         <item name="searchCloseIcon">@drawable/ic_action_navigation_close_inverted</item>
 
         <!-- Change up icon-->
-        <item name="searchBackIcon">@drawable/ic_action_navigation_arrow_back_inverted</item>
+        <item name="searchBackIcon">@drawable/ic_action_search</item>
 
         <!-- Change icon for the suggestions-->
         <item name="searchSuggestionIcon">@drawable/ic_suggestion</item>

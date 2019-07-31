@@ -825,7 +825,7 @@ public class PostsDetailsActivity extends BaseActivity implements View.OnClickLi
                                 myList.getIdUserName()  + "_postId@" + myList.getIdPosts()  + "_click@" + "1"; */
 
 
-                        likeButtonMain.setImageDrawable(getResources().getDrawable(R.drawable.heart_shape_outlinered));
+                        likeButtonMain.setImageDrawable(getResources().getDrawable(R.drawable.ic_heart_red));
                       //  sendLikeToServer(application, 1, 0, 0, 0, "clicked like button");
 
                         mPresenter.sendLikeToServerOnline(MySharedPreferences.getUserId(preferences), postId, "1",  MySharedPreferences.getFireBaseToken(preferences));
@@ -849,7 +849,7 @@ public class PostsDetailsActivity extends BaseActivity implements View.OnClickLi
                         } */
                         hugCounter++;
 
-                        HugButtonMain.setImageDrawable(getResources().getDrawable(R.drawable.broken_candidred));
+                        HugButtonMain.setImageDrawable(getResources().getDrawable(R.drawable.ic_heart_broken_red));
 
                         mPresenter.sendSadToServerOnline(MySharedPreferences.getUserId(preferences), postId, "1",  MySharedPreferences.getFireBaseToken(preferences));
 
@@ -1390,7 +1390,7 @@ public class PostsDetailsActivity extends BaseActivity implements View.OnClickLi
         hug_button_true = false;
 
         hugCounter--;
-        HugButtonMain.setImageDrawable(getResources().getDrawable(R.drawable.broken_candid));
+        HugButtonMain.setImageDrawable(getResources().getDrawable(R.drawable.ic_heart_broken));
         new_counter_hug_number.setText(NumberFormat.getIntegerInstance().format(hugCounter));
     }
 
@@ -1398,7 +1398,7 @@ public class PostsDetailsActivity extends BaseActivity implements View.OnClickLi
         mPresenter.sendLikeToServerOnline(MySharedPreferences.getUserId(preferences), postId, "0",  MySharedPreferences.getFireBaseToken(preferences));
 
         likeCounter--;
-        likeButtonMain.setImageDrawable(getResources().getDrawable(R.drawable.heart_shape_outline));
+        likeButtonMain.setImageDrawable(getResources().getDrawable(R.drawable.ic_heart));
         new_counter_like_number.setText(NumberFormat.getIntegerInstance().format(likeCounter));
     }
 
@@ -1730,20 +1730,20 @@ public class PostsDetailsActivity extends BaseActivity implements View.OnClickLi
 
         if (myList.getUserLike() != null){
             if (myList.getUserLike()){
-                likeButtonMain.setImageDrawable(getResources().getDrawable(R.drawable.heart_shape_outlinered));
+                likeButtonMain.setImageDrawable(getResources().getDrawable(R.drawable.ic_heart_red));
                 like_button_true = true;
                 //   likeButtonMain.setFavoriteResource(like_after);
             } else {
-                likeButtonMain.setImageDrawable(getResources().getDrawable(R.drawable.heart_shape_outline));
+                likeButtonMain.setImageDrawable(getResources().getDrawable(R.drawable.ic_heart));
                 like_button_true = false;
             }
 
 
             if (myList.getUserHuge()){
-                HugButtonMain.setImageDrawable(getResources().getDrawable(R.drawable.broken_candidred));
+                HugButtonMain.setImageDrawable(getResources().getDrawable(R.drawable.ic_heart_broken_red));
                 hug_button_true = true;
             } else {
-                HugButtonMain.setImageDrawable(getResources().getDrawable(R.drawable.broken_candid));
+                HugButtonMain.setImageDrawable(getResources().getDrawable(R.drawable.ic_heart_broken));
                 hug_button_true = false;
             }
         }
