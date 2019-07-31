@@ -188,6 +188,7 @@ public class DiscoverActivity extends BaseActivity implements Constants, Discove
                         return true;
                     case R.id.navigation_post:
                         Intent intent = new Intent(DiscoverActivity.this, PostActivity.class);
+                        //Intent intent = new Intent(DiscoverActivity.this, StartPage01GetStarted.class);
                         startActivity(intent);
                         return true;
                     case R.id.navigation_me:

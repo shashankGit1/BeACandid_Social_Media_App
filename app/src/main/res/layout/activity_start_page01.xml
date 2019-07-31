@@ -20,13 +20,37 @@
         app:srcCompat="@drawable/back_ground_logo"
         tools:layout_editor_absoluteY="107dp" />
 
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:buttonTint="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/get_started_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/terms_and_conditions"
+        app:layout_constraintTop_toBottomOf="@+id/candid_logo"
+        android:id="@+id/checkBox" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="255dp"
+        android:text="I agree to the Terms and conditions"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toRightOf="@+id/checkBox"
+        app:layout_constraintTop_toBottomOf="@+id/candid_logo"
+        android:id="@+id/terms_and_conditions" />
+
+
+
+
     <Button
         android:id="@+id/get_started_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="10dp"
         android:textStyle="bold"
         android:padding="15dp"
         android:textColor="@color/white"
@@ -34,5 +58,18 @@
         android:text="Get Started Anonymously"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/candid_logo" />
+        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/webviewProgressBar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

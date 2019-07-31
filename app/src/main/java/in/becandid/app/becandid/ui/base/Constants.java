@@ -19,7 +19,7 @@ public interface Constants {
                     "asshole", "nudes", "nudity", "nude", "fuck", "suck", "boobs", "porn",
                     "sex", "horny", "pussy", "dick", "anal", "masturbate", "fetish",
                     "rape", "gangrape", "erect", "penis", "pedos", "pedophile", "boobs", "vagina", "slut",
-                    "bitch", "twat")
+                    "bitch", "sexual")
     );
 
     String GLOBAL_TOPIC = "GLOBAL_TOPIC";

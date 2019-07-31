@@ -44,8 +44,8 @@ android {
         applicationId "in.becandid.app.becandid"
         minSdkVersion 19
         targetSdkVersion 28
-        versionCode 182
-        versionName "162"
+        versionCode 184
+        versionName "164"
         multiDexEnabled true
         // missingDimensionStrategy 'minApi', 'minApi24'
         buildConfigField "String", "BASE_URL", "\"https://beacandid.com/nYw5JUu2ne8nCbsP\""

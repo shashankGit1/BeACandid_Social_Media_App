@@ -145,6 +145,7 @@ public class PostActivity extends BaseActivity implements
         Intent intent = getIntent();
 
         String group_name = intent.getStringExtra("POST_GROUP_NAME");
+
         single.setText(group_name);
 
         create_post_circle.setOnClickListener(this);
