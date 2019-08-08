@@ -23,6 +23,7 @@
 
         <TextView
             android:id="@+id/messageText"
+            android:fontFamily="@font/quicksand_bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignWithParentIfMissing="true"/>
@@ -30,6 +31,7 @@
         <TextView
             android:id="@+id/messageTime"
             android:layout_width="wrap_content"
+            android:fontFamily="@font/quicksand_bold"
             android:layout_height="wrap_content"
             android:layout_below="@+id/messageText"
             android:layout_marginLeft="8dp"

@@ -519,7 +519,7 @@ public class PostActivity extends BaseActivity implements
         //VERY_UNLIKELY, UNLIKELY, POSSIBLE, LIKELY, and VERY_LIKELY.
         uploading_image_loading.setVisibility(View.GONE);
 
-        if (response.getAdult() > 2){
+        if (response.getAdult() > 3){
 
             new AlertDialog.Builder(PostActivity.this)
                     .setTitle("Adult Content detected by our AI Cloud Software ?")

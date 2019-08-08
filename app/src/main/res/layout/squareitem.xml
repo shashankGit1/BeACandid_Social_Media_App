@@ -17,6 +17,7 @@
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/quicksand_bold"
         android:layout_above="@+id/members_in_group"
         android:background="#fff"
         android:text="text"
@@ -26,6 +27,7 @@
     <TextView
         android:id="@+id/members_in_group"
         android:layout_width="match_parent"
+        android:fontFamily="@font/quicksand_bold"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="#fff"

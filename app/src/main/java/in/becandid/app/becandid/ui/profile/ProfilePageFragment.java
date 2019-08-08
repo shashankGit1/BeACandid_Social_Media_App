@@ -157,7 +157,7 @@ public class ProfilePageFragment extends BaseFragment implements View.OnClickLis
             user_facebook_button.setVisibility(View.GONE);
        }
 
-        user_username.setOnClickListener(new View.OnClickListener() {
+   /*     user_username.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), CustomUsernameActivity.class);
@@ -165,7 +165,7 @@ public class ProfilePageFragment extends BaseFragment implements View.OnClickLis
                 startActivity(intent);
 
             }
-        });
+        }); */
 
   //      if (MySharedPreferences.getLocation(preferences)!= null){
         //    user_location_button.setVisibility(View.GONE);
@@ -390,7 +390,7 @@ public class ProfilePageFragment extends BaseFragment implements View.OnClickLis
         String username = MySharedPreferences.getUserId(preferences);
 
         if (response.getUser_nick_name()==null){
-            user_username.setText("Click here to enter username");
+            user_username.setText("Anonymous");
         } else {
             user_username.setText(response.getUser_nick_name());
 

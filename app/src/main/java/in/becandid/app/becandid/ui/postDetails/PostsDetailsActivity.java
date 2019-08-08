@@ -733,6 +733,12 @@ public class PostsDetailsActivity extends BaseActivity implements View.OnClickLi
                         popupMenu.getMenu().setGroupVisible(R.id.main_menu_group_details, false);
                     }
 
+                    if (myList.getIdUserName().equals("35783")) {
+                        popupMenu.getMenu().setGroupVisible(R.id.main_menu_group_details, true);
+                    } else {
+                        popupMenu.getMenu().setGroupVisible(R.id.main_menu_group_details, false);
+                    }
+
 
               //  popupMenu.getMenu().setGroupVisible(R.id.main_menu_group_details, true);
 

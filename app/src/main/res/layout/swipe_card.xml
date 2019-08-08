@@ -28,6 +28,7 @@
 
             <TextView
                 android:id="@+id/textViewCard"
+                android:fontFamily="@font/quicksand_bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
@@ -39,6 +40,7 @@
             <TextView
                 android:id="@+id/members_in_group"
                 android:layout_width="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/group_tags_01"
                 android:layout_marginLeft="8dp"
@@ -52,6 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/group_details"
+                android:fontFamily="@font/quicksand_bold"
                 android:layout_marginLeft="18dp"
                 android:layout_marginRight="5dp"
                 android:background="@drawable/swipe_card_hashtags"
@@ -70,6 +73,7 @@
                 android:background="@drawable/swipe_card_hashtags"
                 android:includeFontPadding="false"
                 android:padding="10dp"
+                android:fontFamily="@font/quicksand_bold"
                 android:text="School"
                 android:textColor="@color/white"
                 android:visibility="gone" />
@@ -83,6 +87,7 @@
                 android:layout_toEndOf="@+id/group_tags_02"
                 android:background="@drawable/swipe_card_hashtags"
                 android:includeFontPadding="false"
+                android:fontFamily="@font/quicksand_bold"
                 android:padding="10dp"
                 android:text="Health"
                 android:textColor="@color/white"
@@ -95,6 +100,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginLeft="8dp"
                 android:layout_marginBottom="8dp"
+                android:fontFamily="@font/quicksand_bold"
                 android:maxLines="2"
                 android:padding="10dp"
                 tools:text="Sample text written on top of the card."

@@ -28,6 +28,7 @@
             android:id="@+id/voiceme_heading"
             android:layout_below="@+id/layout_login_logo"
             android:textSize="18sp"
+            android:fontFamily="@font/quicksand_bold"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
             android:text="CANDID"/>
@@ -50,6 +51,7 @@
             android:layout_below="@+id/login_divider"
             android:textSize="14sp"
             android:layout_marginTop="5dp"
+            android:fontFamily="@font/quicksand_bold"
             android:text="JUST SAY IT"/>
 
 
@@ -70,6 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:textSize="14sp"
+            android:fontFamily="@font/quicksand_bold"
             android:layout_above="@+id/signin_with_google_btn"/>
 
         <com.google.android.gms.common.SignInButton
@@ -98,6 +101,7 @@
             android:text="or"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/quicksand_bold"
             android:layout_above="@+id/signin_with_facebook_btn"
             android:layout_centerHorizontal="true"
             android:id="@+id/login_divider_or" />
@@ -129,6 +133,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:textColor="@color/black"
+            android:fontFamily="@font/quicksand_bold"
             android:id="@+id/disclaimer_login"
             android:layout_marginLeft="70dp"
             android:layout_marginBottom="95dp"
@@ -144,6 +149,7 @@
             android:id="@+id/facebookdonotpost"
             android:layout_marginLeft="70dp"
             android:layout_marginBottom="75dp"
+            android:fontFamily="@font/quicksand_bold"
             android:text="This doesn't let the app post on Facebook"
             android:layout_centerHorizontal="true"
             />

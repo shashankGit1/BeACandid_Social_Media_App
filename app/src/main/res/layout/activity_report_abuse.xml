@@ -36,6 +36,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
+                        android:fontFamily="@font/quicksand_bold"
                         android:text="Take Action against Abusive Posts"
                         android:textSize="18sp" />
 
@@ -48,6 +49,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/quicksand_bold"
                         android:layout_gravity="left"
                         android:text="Abusive Status Post you selected"
                         android:textAppearance="?android:textAppearanceSmall"/>
@@ -57,6 +59,7 @@
                         android:layout_height="wrap_content"
                         android:text="Current status which the user wants to edit"
                         android:textSize="18sp"
+                        android:fontFamily="@font/quicksand_bold"
                         android:layout_marginTop="5dp"
                         android:maxLines="2"
                         android:layout_marginBottom="10dp"
@@ -72,12 +75,15 @@
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/quicksand_bold"
                             android:textAppearance="?android:textAppearanceSmall"
                             android:id="@+id/report_irrelevant"
                             android:text=" Post is Irrelevant "/>
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/quicksand_bold"
+
                             android:id="@+id/report_sexual"
                             android:textAppearance="?android:textAppearanceSmall"
                             android:text=" Post is Sexual or Pornographic"/>
@@ -85,6 +91,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/report_bully"
+                            android:fontFamily="@font/quicksand_bold"
+
                             android:textAppearance="?android:textAppearanceSmall"
                             android:text=" Report Bullying and Abusive"/>
                         <RadioButton
@@ -92,9 +100,13 @@
                             android:layout_height="wrap_content"
                             android:textAppearance="?android:textAppearanceSmall"
                             android:id="@+id/report_imperson"
+                            android:fontFamily="@font/quicksand_bold"
+
                             android:text=" Report Impersonation "/>
                         <RadioButton
                             android:layout_width="wrap_content"
+                            android:fontFamily="@font/quicksand_bold"
+
                             android:textAppearance="?android:textAppearanceSmall"
                             android:layout_height="wrap_content"
                             android:id="@+id/report_spam"
@@ -102,6 +114,8 @@
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/quicksand_bold"
+
                             android:textAppearance="?android:textAppearanceSmall"
                             android:id="@+id/report_other"
                             android:text=" Other "/>
