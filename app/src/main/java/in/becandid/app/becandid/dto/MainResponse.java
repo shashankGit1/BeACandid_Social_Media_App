@@ -9,6 +9,7 @@ import java.util.List;
  * Created by harishpc on 7/1/2017.
  */
 public class MainResponse {
+
     @SerializedName("data") @Expose private List<Datum> data = null;
     @SerializedName("paging") @Expose private Paging paging;
     @SerializedName("summary") @Expose private Summary summary;

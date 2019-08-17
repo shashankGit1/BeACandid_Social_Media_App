@@ -19,6 +19,7 @@ import androidx.fragment.app.Fragment;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import android.view.MenuItem;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.iid.FirebaseInstanceId;
 
 import javax.inject.Inject;
@@ -27,6 +28,7 @@ import butterknife.ButterKnife;
 import in.becandid.app.becandid.data.DataManager;
 import in.becandid.app.becandid.di.component.ActivityComponent;
 import in.becandid.app.becandid.infrastructure.Account;
+import in.becandid.app.becandid.ui.base.VoicemeApplication;
 import in.becandid.app.becandid.ui.group.GroupsFragment;
 import in.becandid.app.becandid.R;
 
@@ -53,6 +55,7 @@ public class DiscoverActivity extends BaseActivity implements Constants, Discove
 
     private SharedPreferences prefs;
     BottomNavigationView navigation;
+
     /**
      * Is true if  the user is  in demo mode.
      * Otherwise is  false
@@ -162,7 +165,6 @@ public class DiscoverActivity extends BaseActivity implements Constants, Discove
 
         applicationContext = this.getApplicationContext();
         fab = (FloatingActionButton) findViewById(R.id.fab);
-
 
         // ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         // viewPager.setAdapter(new DiscoverActivityFragmentPagerAdapter(getSupportFragmentManager()));

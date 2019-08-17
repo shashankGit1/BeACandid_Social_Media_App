@@ -7,8 +7,7 @@ import androidx.multidex.MultiDex;
 import com.androidnetworking.AndroidNetworking;
 import com.crashlytics.android.Crashlytics;
 import com.facebook.drawee.backends.pipeline.Fresco;
-import com.google.android.gms.analytics.GoogleAnalytics;
-import com.google.android.gms.analytics.Tracker;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import javax.inject.Inject;
 
@@ -29,8 +28,8 @@ public class VoicemeApplication extends Application {
     private static Auth auth;
     private static Context context;
     // private WebService webService;
-    private static GoogleAnalytics sAnalytics;
-    private static Tracker sTracker;
+    public FirebaseAnalytics sAnalytics;
+
     protected RxBus bus;
 
     /*@Inject
@@ -99,6 +98,10 @@ public class VoicemeApplication extends Application {
         auth = new Auth(this);
 
 
+
+        sAnalytics = FirebaseAnalytics.getInstance(this);
+
+
         applicationComponent = DaggerApplicationComponent
                 .builder()
                 .applicationModule(new ApplicationModule(this))
@@ -156,8 +159,6 @@ public class VoicemeApplication extends Application {
                 .build());
                 */
 
-        sAnalytics = GoogleAnalytics.getInstance(this);
-
         Fresco.initialize(this);
         bus = new RxBus();
 
@@ -174,7 +175,11 @@ public class VoicemeApplication extends Application {
     }
 
 
-    synchronized public Tracker getDefaultTracker() {
+    public FirebaseAnalytics getFireBase(){
+        return sAnalytics;
+    }
+
+   /* synchronized public Tracker getDefaultTracker() {
         // To enable debug logging use: adb shell setprop log.tag.GAv4 DEBUG
         if (sTracker == null) {
             sTracker = sAnalytics.newTracker(R.xml.global_tracker);
@@ -182,6 +187,10 @@ public class VoicemeApplication extends Application {
 
         return sTracker;
     }
+
+    */
+
+
 
 
 

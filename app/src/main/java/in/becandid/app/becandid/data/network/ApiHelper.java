@@ -48,6 +48,7 @@ public interface ApiHelper {
 
     ApiHeader getApiHeader();
 
+
     Single<List<PostsModel>> getImagePosts(String user_id, String onlyImages, String page);
     Single<SuccessResponse> getAuthorisedAccess(String access, String user_id);
 

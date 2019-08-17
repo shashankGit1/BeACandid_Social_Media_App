@@ -146,6 +146,7 @@ public class AppApiHelper implements ApiHelper {
                 .getObjectSingle(MainResponse.class);
     }
 
+
     // get first page facebook friends online
     @Override
     public Single<MainResponse> getFacebookFriends02(String access_token, String limit, String after) {

@@ -17,7 +17,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.analytics.Tracker;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import butterknife.Unbinder;
 import in.becandid.app.becandid.di.component.ActivityComponent;
@@ -39,8 +39,6 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView,
     protected VoicemeApplication application;
     protected Toolbar toolbar;
     protected SharedPreferences preferences;
-    protected Tracker mTracker;
-
 
 
     // public String id;
@@ -59,7 +57,6 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView,
       //  getBus = application.getBus();
       //  scheduler = new ActionScheduler(application);
         preferences = getSharedPreferences(CONSTANT_PREF_FILE, Context.MODE_PRIVATE);
-
 
 
         mActivityComponent = DaggerActivityComponent.builder()
@@ -89,9 +86,6 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView,
             }
         } */
 
-
-        mTracker = application.getDefaultTracker();
-
     }
 
 
@@ -113,8 +107,6 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView,
 
     //    scheduler.onResume();
     }
-
-
 
     @Override
     protected void onPause() {
@@ -250,7 +242,7 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView,
 
     }
 
-    public void hideKeyboard() {
+     public void hideKeyboard() {
         View view = this.getCurrentFocus();
         if (view != null) {
             InputMethodManager imm = (InputMethodManager)
@@ -258,6 +250,8 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView,
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
     }
+
+
 
     @Override
     public void openActivityOnTokenExpire() {

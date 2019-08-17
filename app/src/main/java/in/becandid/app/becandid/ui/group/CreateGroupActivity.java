@@ -48,6 +48,7 @@ public class CreateGroupActivity extends BaseActivity implements CreateGroupMvpV
         getActivityComponent().inject(this);
         setUnBinder(ButterKnife.bind(this));
         mPresenter.onAttach(CreateGroupActivity.this);
+
         search_group_name = (ProgressBar) findViewById(R.id.search_group_name);
         search_group_name.setVisibility(View.GONE);
         etNameOfGroup = (EditText) findViewById(R.id.etNameOfGroup);

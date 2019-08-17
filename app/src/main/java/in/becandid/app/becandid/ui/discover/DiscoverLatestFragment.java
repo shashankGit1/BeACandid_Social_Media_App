@@ -15,6 +15,8 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 import java.util.List;
 import java.util.concurrent.TimeoutException;
 
@@ -24,6 +26,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import in.becandid.app.becandid.di.component.ActivityComponent;
 import in.becandid.app.becandid.dto.PostsModel;
+import in.becandid.app.becandid.ui.base.VoicemeApplication;
 import in.becandid.app.becandid.ui.profile.SimpleDividerItemDecoration;
 import in.becandid.app.becandid.R;
 import in.becandid.app.becandid.ui.base.BaseFragment;
@@ -101,6 +104,7 @@ public class DiscoverLatestFragment extends BaseFragment implements OnLoadMoreLi
         if (getActivity()!=null){
             latestListAdapter = new LatestListAdapter(getActivity());
         }
+
 
     }
 
@@ -336,6 +340,20 @@ public class DiscoverLatestFragment extends BaseFragment implements OnLoadMoreLi
 
 
         }
+    }
+
+    void sendFireBaseData(){
+
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "1");
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "2");
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "text");
+
+
+        ( (VoicemeApplication)getActivity().getApplication()).getFireBase().logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
+
+       // mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
+
     }
 
     @Override

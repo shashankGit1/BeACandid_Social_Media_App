@@ -143,8 +143,8 @@
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".ui.postDetails.PostsDetailsActivity"
-            android:screenOrientation="portrait"
             android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="in.voiceme.app.voiceme.REACTIONS" />
