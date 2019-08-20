@@ -1,29 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
         android:id="@+id/navigation_feed"
         android:icon="@drawable/ic_format_align_left_black_24dp"
-        android:title="Feed" />
+        android:title="Feed"
+        tools:ignore="HardcodedText" />
 
     <item
         android:id="@+id/navigation_groups"
         android:icon="@drawable/ic_star_black_24dp"
-        android:title="Groups" />
+        android:title="Groups"
+        tools:ignore="HardcodedText" />
 
     <item
         android:id="@+id/navigation_post"
         android:icon="@drawable/ic_add_black_24dp"
-        android:title="Post" />
+        android:title="Post"
+        tools:ignore="HardcodedText" />
 
     <item
         android:id="@+id/navigation_me"
         android:icon="@drawable/ic_person_black_24dp"
-        android:title="Me" />
+        android:title="Me"
+        tools:ignore="HardcodedText" />
 
     <item
         android:id="@+id/navigation_activity"
         android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="Chat" />
+        android:title="Chat"
+        tools:ignore="HardcodedText" />
 
 </menu>

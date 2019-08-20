@@ -12,7 +12,7 @@ buildscript {
 
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0-beta05'
+        classpath 'com.android.tools.build:gradle:3.5.0-rc03'
         // Uncomment if you want to use Java 8 syntax without switching to the Jack+Jill compilers
        // classpath 'me.tatarka:gradle-retrolambda:3.2.5'
 
