@@ -55,19 +55,18 @@ public class DiscoverLatestFragment extends BaseFragment implements OnLoadMoreLi
     LinearLayout no_post_layout;
     LinearLayout errorLayout;
 
-
     //  Button error_btn_retry;
-  //  LinearLayout errorLayout;
-  //  LinearLayout no_post_layout;
-   // TextView txtError;
-  //TextView no_post_textview;
+    //  LinearLayout errorLayout;
+    //  LinearLayout no_post_layout;
+    //  TextView txtError;
+    //  TextView no_post_textview;
 
 
-    ///  error_btn_retry = (Button) view.findViewById(R.id.error_btn_retry);
-   // no_post_layout = (LinearLayout) view.findViewById(R.id.no_post_layout);
+    //  error_btn_retry = (Button) view.findViewById(R.id.error_btn_retry);
+    //  no_post_layout = (LinearLayout) view.findViewById(R.id.no_post_layout);
 
-   // no_post_textview = (TextView) view.findViewById(R.id.no_post_textview);
-   // txtError = (TextView) view.findViewById(R.id.error_txt_cause);
+    // no_post_textview = (TextView) view.findViewById(R.id.no_post_textview);
+    // txtError = (TextView) view.findViewById(R.id.error_txt_cause);
 
     private static final int PAGE_START = 1;
     private boolean isLoading = false;
