@@ -79,6 +79,10 @@ public class AppDataManager implements DataManager {
     }
 
     @Override
+    public Single<SuccessResponse> samplenetwork(String one, String two) {
+        return mApiHelper.samplenetwork(one, two);
+    }
+        @Override
     public Single<List<PostsModel>> getImagePosts(String user_id, String onlyImages, String page) {
         return mApiHelper.getImagePosts(user_id, onlyImages, page);
     }

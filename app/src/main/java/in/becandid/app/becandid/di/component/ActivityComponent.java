@@ -34,6 +34,7 @@ import in.becandid.app.becandid.ui.group.CreateGroupActivity;
 import in.becandid.app.becandid.ui.group.CreateGroupDescActivity;
 import in.becandid.app.becandid.ui.group.CreateGroupTagActivity;
 import in.becandid.app.becandid.ui.group.EditGroupActivity;
+import in.becandid.app.becandid.ui.group.GroupSearchActivity;
 import in.becandid.app.becandid.ui.group.LoginCommunityGroupActivity;
 import in.becandid.app.becandid.ui.group.LoginGroupTagActivity;
 import in.becandid.app.becandid.ui.group.MyGroupsFragment;
@@ -65,6 +66,7 @@ import in.becandid.app.becandid.ui.userpost.ReportAbuseActivity;
 public interface ActivityComponent {
 
     void inject(DiscoverActivity activity);
+    void inject(GroupSearchActivity activity);
     void inject(DiscoverLatestFragment fragment);
 
     void inject(DiscoverTrendingFragment fragment);

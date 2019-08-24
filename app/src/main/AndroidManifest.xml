@@ -29,6 +29,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
+        <activity android:name=".ui.group.GroupSearchActivity"
+            android:windowSoftInputMode="stateHidden"></activity>
         <activity android:name=".ui.profile.CustomUsernameActivity" />
         <activity android:name=".ui.filter.PremiumSearchResultActivity" />
 
@@ -187,7 +189,6 @@
             android:exported="true"
             android:label="@string/title_activity_start_page02"
             android:theme="@style/AppTheme">
-
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 

@@ -28,6 +28,8 @@ public final class ApiEndPoint {
 
 
     public static final String POST_BLOCK_USER = BuildConfig.BASE_URL + "/block_user.php";
+    public static final String SAMPLE = BuildConfig.BASE_URL + "/sample.php";
+
     public static final String GET_CHECK_GROUP_NAME = BuildConfig.BASE_URL + "/check_group_name.php";
     public static final String GET_CHECK_USER_NAME = BuildConfig.BASE_URL + "/check_username.php";
     public static final String DELETE_CHAT = BuildConfig.BASE_URL + "/delete_chat.php";
