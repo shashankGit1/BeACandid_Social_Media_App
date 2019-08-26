@@ -20,6 +20,7 @@
 
 package in.becandid.app.becandid.ui.group;
 
+import android.content.Intent;
 import android.os.Bundle;
 import com.google.android.material.tabs.TabLayout;
 import androidx.fragment.app.Fragment;
@@ -27,12 +28,15 @@ import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TextView;
 
 
 import in.becandid.app.becandid.R;
 
 public class GroupsFragment extends Fragment {
     View view;
+    TextView search_groups_get_all;
 
     public static GroupsFragment newInstance() {
         GroupsFragment fragment = new GroupsFragment();
@@ -48,6 +52,15 @@ public class GroupsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_item_two, container, false);
+        search_groups_get_all = (TextView) view.findViewById(R.id.search_groups_get_all);
+
+        search_groups_get_all.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(view.getContext(), GroupSearchActivity.class);
+                v.getContext().startActivity(intent);
+            }
+        });
 
         ViewPager viewPager = (ViewPager) view.findViewById(R.id.activity_groups_viewpager);
         this.addPages(viewPager);

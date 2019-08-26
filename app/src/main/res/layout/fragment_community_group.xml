@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,6 +9,31 @@
     android:layout_marginBottom="55dp"
     android:clipChildren="false"
     tools:context="in.becandid.app.becandid.ui.group.CommunityGroupFragment">
+
+<!--    <EditText-->
+<!--        android:layout_width="250dp"-->
+<!--        android:id="@+id/search_groups_get_all"-->
+<!--        android:layout_alignParentLeft="true"-->
+<!--        android:layout_marginLeft="10dp"-->
+<!--        android:hint="Search"-->
+<!--        android:padding="10dp"-->
+<!--        android:layout_height="wrap_content" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/create_group"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:layout_marginRight="10dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:background="@drawable/btn_bg_create"-->
+<!--        android:paddingBottom="5dp"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:paddingLeft="15dp"-->
+<!--        android:paddingRight="15dp"-->
+<!--        android:paddingTop="5dp"-->
+<!--        android:text="+  Create"-->
+<!--        android:textColor="@color/white" />-->
 
     <Button
         android:id="@+id/buttonSwipeLeft"
@@ -88,6 +114,7 @@
     <link.fls.swipestack.SwipeStack
         android:id="@+id/swipeStack_latest"
         android:splitMotionEvents="false"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/buttonSwipeLeft"

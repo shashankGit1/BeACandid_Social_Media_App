@@ -335,12 +335,21 @@ public class AppApiHelper implements ApiHelper {
                 .build()
                 .getObjectListSingle(CommunityGroupPojo.class);
     }
-
     @Override
     public Single<SuccessResponse> get_group_name_check(String group_name) {
         return Rx2AndroidNetworking.get(ApiEndPoint.GET_CHECK_GROUP_NAME)
                 //  .addHeaders(mApiHeader.getProtectedApiHeader())
                 .addQueryParameter("group_name", group_name)
+                .build()
+                .getObjectSingle(SuccessResponse.class);
+    }
+
+    @Override
+    public Single<SuccessResponse> samplenetwork(String one, String two) {
+        return Rx2AndroidNetworking.get(ApiEndPoint.SAMPLE)
+                //  .addHeaders(mApiHeader.getProtectedApiHeader())
+                .addQueryParameter("one", one)
+                .addQueryParameter("two", two)
                 .build()
                 .getObjectSingle(SuccessResponse.class);
     }

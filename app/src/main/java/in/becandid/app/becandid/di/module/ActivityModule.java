@@ -54,6 +54,9 @@ import in.becandid.app.becandid.ui.group.CreateGroupTagPresenter;
 import in.becandid.app.becandid.ui.group.EditGroupMvpPresenter;
 import in.becandid.app.becandid.ui.group.EditGroupMvpView;
 import in.becandid.app.becandid.ui.group.EditGroupPresenter;
+import in.becandid.app.becandid.ui.group.GroupSearchMvpPresenter;
+import in.becandid.app.becandid.ui.group.GroupSearchMvpView;
+import in.becandid.app.becandid.ui.group.GroupSearchPresenter;
 import in.becandid.app.becandid.ui.group.MyGroupsMvpPresenter;
 import in.becandid.app.becandid.ui.group.MyGroupsMvpView;
 import in.becandid.app.becandid.ui.group.MyGroupsPresenter;
@@ -141,6 +144,12 @@ public class ActivityModule {
     @Provides
     CustomUsernameMvpPresenter<CustomUsernameMvpView> provideCustomUsernameMvpPresenter(
             CustomUsernamePresenter<CustomUsernameMvpView> presenter) {
+        return presenter;
+    }
+
+    @Provides
+    GroupSearchMvpPresenter<GroupSearchMvpView> provideGroupSearchMvpPresenter(
+            GroupSearchPresenter<GroupSearchMvpView> presenter) {
         return presenter;
     }
 

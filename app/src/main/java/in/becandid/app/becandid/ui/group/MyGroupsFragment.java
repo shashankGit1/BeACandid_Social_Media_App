@@ -74,8 +74,8 @@ public class MyGroupsFragment extends BaseFragment implements MyGroupsMvpView {
     private List<CommunityGroupPojoNew> response;
     private View progressFrame;
     private GridView gridView;
-    private EditText search_groups;
-    private TextView create_group;
+   // private EditText search_groups;
+   // private TextView create_group;
     private Autocomplete userAutocomplete;
     private SharedPreferences pref;
     List<GroupUser> joinedGroup;
@@ -125,7 +125,7 @@ public class MyGroupsFragment extends BaseFragment implements MyGroupsMvpView {
 
 
         progressBar = (ProgressBar) view.findViewById(R.id.main_progress);
-        create_group = (TextView) view.findViewById(R.id.create_group);
+      //  create_group = (TextView) view.findViewById(R.id.create_group);
         progressFrame = view.findViewById(R.id.groups_Fragment_frame);
 
         layout = (SwipeRefreshLayout) view.findViewById(R.id.my_group_swipeRefreshLayout);
@@ -185,13 +185,13 @@ public class MyGroupsFragment extends BaseFragment implements MyGroupsMvpView {
             }
         });
 
-        create_group.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), CreateGroupActivity.class);
-                startActivity(intent);
-            }
-        });
+//        create_group.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(getActivity(), CreateGroupActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         try {
             if (key_user_age.equals("1")){
@@ -222,7 +222,7 @@ public class MyGroupsFragment extends BaseFragment implements MyGroupsMvpView {
 
 
     private void setupUserAutocomplete(List<GroupUser> joinedGroup, View view) {
-        search_groups = (EditText) view.findViewById(R.id.search_groups_get_all);
+       // search_groups = (EditText) view.findViewById(R.id.search_groups_get_all);
         float elevation = 6f;
         backgroundDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.shadow, null);;
         AutocompletePresenter<GroupUser> presenter = new UserPresenter(getActivity(), joinedGroup);
@@ -242,19 +242,19 @@ public class MyGroupsFragment extends BaseFragment implements MyGroupsMvpView {
             public void onPopupVisibilityChanged(boolean shown) {}
         };
 
-        userAutocomplete = Autocomplete.<GroupUser>on(search_groups)
-                .with(elevation)
-                .with(backgroundDrawable)
-                .with(presenter)
-                .with(callback)
-                .build();
-
-        search_groups.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                userAutocomplete.showPopup(" ");
-            }
-        });
+//        userAutocomplete = Autocomplete.<GroupUser>on(search_groups)
+//                .with(elevation)
+//                .with(backgroundDrawable)
+//                .with(presenter)
+//                .with(callback)
+//                .build();
+//
+//        search_groups.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                userAutocomplete.showPopup(" ");
+//            }
+//        });
     }
 
     private void showErrorView(Throwable throwable) {

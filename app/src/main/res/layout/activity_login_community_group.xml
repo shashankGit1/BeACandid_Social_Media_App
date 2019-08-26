@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,24 +10,26 @@
 
     <Button
         android:id="@+id/buttonSwipeLeft_login"
-        android:layout_width="120dp"
+        android:layout_width="155dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="20dp"
-        android:layout_marginBottom="55dp"
+        android:layout_marginBottom="70dp"
+        android:background="@drawable/btn_bg_light_orange"
         android:backgroundTint="@android:color/black"
         android:text="SKIP"
         android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/buttonSwipeRight_login"
-        android:layout_width="120dp"
+        android:layout_width="155dp"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="55dp"
+        android:background="@drawable/btn_bg_light_orange"
+        android:layout_marginBottom="70dp"
         android:backgroundTint="@android:color/holo_orange_dark"
         android:text="JOIN"
         android:textColor="@android:color/white" />
@@ -37,8 +40,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="15dp"
-        android:background="@color/md_grey_500"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btn_bg_light_orange"
+        android:backgroundTint="@color/md_grey_400"
         android:text="Next"
         android:textColor="@color/white"
         android:textSize="18sp" />
