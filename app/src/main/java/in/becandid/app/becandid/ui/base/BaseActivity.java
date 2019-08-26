@@ -1,6 +1,7 @@
 package in.becandid.app.becandid.ui.base;
 
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -8,6 +9,9 @@ import android.os.Build;
 import android.os.Bundle;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.StringRes;
+
+import com.androidnetworking.AndroidNetworking;
+import com.google.android.gms.security.ProviderInstaller;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.core.content.ContextCompat;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,6 +32,7 @@ import in.becandid.app.becandid.ui.login.StartPage01GetStarted;
 import in.becandid.app.becandid.R;
 
 import in.becandid.app.becandid.utils.NetworkUtils;
+import timber.log.Timber;
 
 import static in.becandid.app.becandid.ui.base.Constants.CONSTANT_PREF_FILE;
 
@@ -58,11 +63,11 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView,
       //  scheduler = new ActionScheduler(application);
         preferences = getSharedPreferences(CONSTANT_PREF_FILE, Context.MODE_PRIVATE);
 
-
         mActivityComponent = DaggerActivityComponent.builder()
                 .activityModule(new ActivityModule(this))
                 .applicationComponent(((VoicemeApplication) getApplication()).getComponent())
                 .build();
+
 
 
         bus = application.getBus();
@@ -106,6 +111,14 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView,
         isRunning = true;
 
     //    scheduler.onResume();
+    }
+
+    public void installCertificate(Activity activity){
+        try {
+            ProviderInstaller.installIfNeeded(activity);
+        } catch (Exception ignored) {
+            Timber.e("EXCEPTION " + ignored.getMessage()+" ");
+        }
     }
 
     @Override

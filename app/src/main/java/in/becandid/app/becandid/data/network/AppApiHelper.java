@@ -17,6 +17,7 @@ package in.becandid.app.becandid.data.network;
 
 
 import com.androidnetworking.common.Priority;
+import com.google.android.gms.security.ProviderInstaller;
 import com.rx2androidnetworking.Rx2AndroidNetworking;
 
 import java.io.File;
@@ -112,6 +113,7 @@ public class AppApiHelper implements ApiHelper {
     public Single<LoginResponse> skipUser(String deviceId, String socialNetwork) {
         return Rx2AndroidNetworking.post(ApiEndPoint.POST_LOGIN)
                 // .addHeaders(mApiHeader.getPublicApiHeader())
+
                 .addBodyParameter("deviceId", deviceId)
                 .addBodyParameter("socialNetwork", socialNetwork)
                 .build()
@@ -965,6 +967,7 @@ public class AppApiHelper implements ApiHelper {
                 .getObjectListSingle(Message.class)
                 .observeOn(AndroidSchedulers.mainThread());
     }
+
 
 
 

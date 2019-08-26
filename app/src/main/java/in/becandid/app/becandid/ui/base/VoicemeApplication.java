@@ -3,6 +3,7 @@ package in.becandid.app.becandid.ui.base;
 import android.app.Application;
 import android.content.Context;
 import androidx.multidex.MultiDex;
+import androidx.multidex.MultiDexApplication;
 
 import com.androidnetworking.AndroidNetworking;
 import com.crashlytics.android.Crashlytics;
@@ -24,7 +25,11 @@ import io.fabric.sdk.android.Fabric;
 /**
  * Created by Harish on 7/20/2016.
  */
-public class VoicemeApplication extends Application {
+public class VoicemeApplication extends MultiDexApplication {
+
+    @Inject
+    DataManager mDataManager;
+
     private static Auth auth;
     private static Context context;
     // private WebService webService;
@@ -94,6 +99,8 @@ public class VoicemeApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+
         //Fabric.with(this, new Crashlytics());
         auth = new Auth(this);
 
@@ -106,9 +113,9 @@ public class VoicemeApplication extends Application {
                 .builder()
                 .applicationModule(new ApplicationModule(this))
                 .build();
+
         applicationComponent.inject(this);
 
-        AndroidNetworking.initialize(getApplicationContext());
 
 
       /*  try {
@@ -170,6 +177,9 @@ public class VoicemeApplication extends Application {
                 .build();
 
         Fabric.with(fabric);
+
+        AndroidNetworking.initialize(getApplicationContext());
+
 
         // initDatabase();
     }

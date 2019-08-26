@@ -359,10 +359,18 @@ public class LatestListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
        //     likeCounter = Integer.parseInt(like_counter.getText().toString());
 
             if (like_button_true){
+
             //    Toast.makeText(itemView.getContext(), "unLiked", Toast.LENGTH_SHORT).show();
                 like_button_true = false;
                 unlikeMethod();
             } else {
+
+                if (hug_button_true){
+                    hug_button_true = false;
+
+                    unHugMethod();
+                }
+
                 like_button_true = true;
 
 
@@ -404,8 +412,15 @@ public class LatestListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             if (hug_button_true){
                 hug_button_true = false;
 
+
                 unHugMethod();
             } else {
+
+                if (like_button_true){
+                    like_button_true = false;
+
+                    unlikeMethod();
+                }
 
                 hug_button_true = true;
 
@@ -597,10 +612,17 @@ public class LatestListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             //     likeCounter = Integer.parseInt(like_counter.getText().toString());
 
             if (like_button_true){
+
                 //    Toast.makeText(itemView.getContext(), "unLiked", Toast.LENGTH_SHORT).show();
                 like_button_true = false;
                 unlikeMethod();
             } else {
+                if (hug_button_true){
+                    hug_button_true = false;
+
+                    unHugMethodWithoutNetwork();
+                }
+
                 like_button_true = true;
                 likeCounter++;
 
@@ -624,16 +646,34 @@ public class LatestListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             likeButtonMain.setImageDrawable(itemView.getResources().getDrawable(R.drawable.ic_heart));
         }
 
+        private void unlikeMethodWithoutNetwork() {
+          //  mLatestInterface.getRandomName();
+          //  ((VoicemeApplication) itemView.getContext().getApplicationContext()).getBus().send(new Account.sendLikeNotify(dataItem.getIdPosts(), "0"));
+
+         //   sendUnlikeToServer((VoicemeApplication) itemView.getContext().getApplicationContext(), 0, 1,  "clicked unlike button");
+            // sendUnlikeToServer((VoicemeApplication) itemView.getContext().getApplicationContext());
+            likeCounter--;
+            like_button_true = false;
+            new_counter_like_number.setText(String.valueOf(NumberFormat.getIntegerInstance().format(likeCounter)));
+            likeButtonMain.setImageDrawable(itemView.getResources().getDrawable(R.drawable.ic_heart));
+        }
+
         @Override
         protected void hugButtonMethod(View view) {
             //    hugCounter = Integer.parseInt(hug_counter.getText().toString());
 
             if (hug_button_true){
+
                 hug_button_true = false;
 
                 unHugMethod();
             } else {
 
+                if (like_button_true){
+                    like_button_true = false;
+
+                    unlikeMethodWithoutNetwork();
+                }
                 hug_button_true = true;
 
 
@@ -657,6 +697,22 @@ public class LatestListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
           //  mLatestInterface.getRandomName();
             ((VoicemeApplication) itemView.getContext().getApplicationContext()).getBus().send(new Account.sendSadEntry(dataItem.getIdPosts(), "0"));
+
+
+//            sendUnlikeToServer((VoicemeApplication) itemView.getContext().getApplicationContext(), 1, 0,  "clicked unlike button");
+
+
+            new_counter_hug_number.setText(String.valueOf(NumberFormat.getIntegerInstance().format(hugCounter)));
+            HugButtonMain.setImageDrawable(itemView.getResources().getDrawable(R.drawable.ic_heart_broken));
+        }
+
+        private void unHugMethodWithoutNetwork() {
+
+            hugCounter--;
+            hug_button_true = false;
+
+          //  mLatestInterface.getRandomName();
+           // ((VoicemeApplication) itemView.getContext().getApplicationContext()).getBus().send(new Account.sendSadEntry(dataItem.getIdPosts(), "0"));
 
 
 //            sendUnlikeToServer((VoicemeApplication) itemView.getContext().getApplicationContext(), 1, 0,  "clicked unlike button");

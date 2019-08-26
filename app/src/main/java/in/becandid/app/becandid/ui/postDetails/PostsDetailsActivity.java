@@ -815,6 +815,8 @@ public class PostsDetailsActivity extends BaseActivity implements View.OnClickLi
             case R.id.detail_list_item_like_button:
 
                     if (like_button_true) {
+
+
                         like_button_true = false;
                         // sendUnlikeToServer((VoicemeApplication) itemView.getContext().getApplicationContext());
                         unLikeMethod();
@@ -825,6 +827,12 @@ public class PostsDetailsActivity extends BaseActivity implements View.OnClickLi
                             unHugMethod();
                         } */
                         likeCounter++;
+
+                        if (hug_button_true){
+                            hug_button_true = false;
+
+                            unHugMethodWithoutNetwork();
+                        }
 
 
 
@@ -845,6 +853,7 @@ public class PostsDetailsActivity extends BaseActivity implements View.OnClickLi
             case R.id.detail_list_item_hug_button:
 
                     if (hug_button_true) {
+
                         hug_button_true = false;
                         // sendUnlikeToServer((VoicemeApplication) itemView.getContext().getApplicationContext());
                         unHugMethod();
@@ -853,7 +862,12 @@ public class PostsDetailsActivity extends BaseActivity implements View.OnClickLi
                       /*  if (like_button_true) {
                             like_button_true = false;
                             unLikeMethod();
-                        } */
+                        } */if (like_button_true){
+                            like_button_true = false;
+
+                            unlikeMethodWithoutNetwork();
+                        }
+
                         hugCounter++;
 
                         HugButtonMain.setImageDrawable(getResources().getDrawable(R.drawable.ic_heart_broken_red));
@@ -1401,7 +1415,26 @@ public class PostsDetailsActivity extends BaseActivity implements View.OnClickLi
         new_counter_hug_number.setText(NumberFormat.getIntegerInstance().format(hugCounter));
     }
 
+    private void unHugMethodWithoutNetwork() {
+
+        mPresenter.sendSadToServerOnline(MySharedPreferences.getUserId(preferences), postId, "0",  MySharedPreferences.getFireBaseToken(preferences));
+
+        hug_button_true = false;
+
+        hugCounter--;
+        HugButtonMain.setImageDrawable(getResources().getDrawable(R.drawable.ic_heart_broken));
+        new_counter_hug_number.setText(NumberFormat.getIntegerInstance().format(hugCounter));
+    }
+
     private void unLikeMethod() {
+        mPresenter.sendLikeToServerOnline(MySharedPreferences.getUserId(preferences), postId, "0",  MySharedPreferences.getFireBaseToken(preferences));
+
+        likeCounter--;
+        likeButtonMain.setImageDrawable(getResources().getDrawable(R.drawable.ic_heart));
+        new_counter_like_number.setText(NumberFormat.getIntegerInstance().format(likeCounter));
+    }
+
+    private void unlikeMethodWithoutNetwork() {
         mPresenter.sendLikeToServerOnline(MySharedPreferences.getUserId(preferences), postId, "0",  MySharedPreferences.getFireBaseToken(preferences));
 
         likeCounter--;

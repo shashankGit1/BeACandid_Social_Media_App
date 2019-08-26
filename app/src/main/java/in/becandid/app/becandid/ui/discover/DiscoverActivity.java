@@ -113,6 +113,8 @@ public class DiscoverActivity extends BaseActivity implements Constants, Discove
        // getActivityComponent().inject(this);
 
 
+      //  installCertificate(this);
+
         setUnBinder(ButterKnife.bind(this));
 
         mPresenter.onAttach(DiscoverActivity.this);
