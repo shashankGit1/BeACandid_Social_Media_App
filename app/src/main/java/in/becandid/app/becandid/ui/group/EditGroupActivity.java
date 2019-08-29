@@ -63,9 +63,6 @@ public class EditGroupActivity extends BaseActivity implements View.OnClickListe
     protected LabeledSwitch switchbutton_group;
     private Uri resultUri;
 
-
-
-
     private File tempOutputFile;
     private String group_selected;
     private static final int REQUEST_SELECT_IMAGE = 100;
@@ -74,6 +71,7 @@ public class EditGroupActivity extends BaseActivity implements View.OnClickListe
 
     @Inject
     EditGroupMvpPresenter<EditGroupMvpView> mPresenter;
+
 
 
     @Override

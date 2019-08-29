@@ -20,6 +20,11 @@ public class PostsModel {
     @SerializedName("audio_file_link") @Expose private String audioFileLink;
     @SerializedName("report_abuse_count") @Expose private int reportAbuseCount;
     @SerializedName("group_id") @Expose private String group_id;
+
+
+    // todo enter group owner ID.
+
+
     @SerializedName("id_user_name_random") @Expose private String id_user_name_random;
     @SerializedName("user_name_random") @Expose private String user_name_random;
     @SerializedName("avatar_url_random") @Expose private String avatar_url_random;

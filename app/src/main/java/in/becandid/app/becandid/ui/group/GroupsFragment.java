@@ -37,6 +37,7 @@ import in.becandid.app.becandid.R;
 public class GroupsFragment extends Fragment {
     View view;
     TextView search_groups_get_all;
+    TextView create_group;
 
     public static GroupsFragment newInstance() {
         GroupsFragment fragment = new GroupsFragment();
@@ -53,6 +54,16 @@ public class GroupsFragment extends Fragment {
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_item_two, container, false);
         search_groups_get_all = (TextView) view.findViewById(R.id.search_groups_get_all);
+
+        create_group = (TextView) view.findViewById(R.id.create_group);
+
+        create_group.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(view.getContext(), CreateGroupActivity.class);
+                v.getContext().startActivity(intent);
+            }
+        });
 
         search_groups_get_all.setOnClickListener(new View.OnClickListener() {
             @Override

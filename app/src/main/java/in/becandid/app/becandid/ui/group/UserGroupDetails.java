@@ -117,6 +117,7 @@ public class UserGroupDetails extends BaseActivity implements OnLoadMoreListener
         progressFrame = findViewById(R.id.activity_user_category_progress);
         recyclerView = (RecyclerView) findViewById(R.id.user_category_recyclerview_other);
         postActivityIntent = new Intent(this, PostActivity.class);
+
         Intent intent = getIntent();
         groupId = intent.getStringExtra(Constants.GROUPID);
         error_btn_retry = (Button) findViewById(R.id.error_btn_retry);
@@ -319,10 +320,12 @@ public class UserGroupDetails extends BaseActivity implements OnLoadMoreListener
             joinedGroup = false;
         }
 
+        // static class to get user ID
+
         if (MySharedPreferences.getUserId(preferences).equalsIgnoreCase(response.getCreatedBy().getIdUserName())){
             category_back_image_icon.setVisibility(View.VISIBLE);
-        user_category_edit.setVisibility(View.VISIBLE);
-        user_category_edit.setOnClickListener(new View.OnClickListener() {
+            user_category_edit.setVisibility(View.VISIBLE);
+            user_category_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(UserGroupDetails.this, EditGroupActivity.class);
@@ -333,15 +336,10 @@ public class UserGroupDetails extends BaseActivity implements OnLoadMoreListener
 
         } else {
            category_back_image_icon.setVisibility(View.GONE);
-            user_category_edit.setVisibility(View.GONE);
-
+           user_category_edit.setVisibility(View.GONE);
 
         }
-
-
     }
-
-
 
 
     @Override

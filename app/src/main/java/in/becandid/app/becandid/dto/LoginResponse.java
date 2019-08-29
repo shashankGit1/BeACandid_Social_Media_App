@@ -1,7 +1,10 @@
 package in.becandid.app.becandid.dto;
 
+import com.google.gson.Gson;
+import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
 
 public class LoginResponse extends AbstractResponse {
     public Info info;

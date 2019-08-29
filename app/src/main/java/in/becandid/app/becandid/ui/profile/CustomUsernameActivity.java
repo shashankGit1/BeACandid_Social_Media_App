@@ -12,8 +12,11 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import javax.inject.Inject;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import in.becandid.app.becandid.R;
 import in.becandid.app.becandid.dto.SuccessResponse;
@@ -23,10 +26,12 @@ import in.becandid.app.becandid.ui.discover.DiscoverActivity;
 
 public class CustomUsernameActivity extends BaseActivity implements CustomUsernameMvpView {
 
-    EditText user_custom_username;
-    ImageView ivProfileImage;
     Button btNext;
     ProgressBar search_username;
+
+    @BindView(R.id.user_custom_username) EditText user_custom_username;
+    @BindView(R.id.ivProfileImage) ImageView ivProfileImage;
+
 
     @Inject
     CustomUsernameMvpPresenter<CustomUsernameMvpView> mPresenter;
@@ -43,7 +48,7 @@ public class CustomUsernameActivity extends BaseActivity implements CustomUserna
 
         search_username = (ProgressBar) findViewById(R.id.search_username);
         search_username.setVisibility(View.GONE);
-        user_custom_username = (EditText) findViewById(R.id.user_custom_username);
+
         user_custom_username.addTextChangedListener(new TextWatcher() {
             @Override
             public void afterTextChanged(Editable s) {
