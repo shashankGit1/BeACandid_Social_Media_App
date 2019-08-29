@@ -13,8 +13,8 @@ public interface NetworkInterface {
 
     @FormUrlEncoded
     @POST(ApiEndPoint.POST_LOGIN_WITHOUT_BASE)
-    Single<LoginResponse> getMovies(@Field("deviceId") String deviceId,
-                                              @Field("socialNetwork") String socialNetwork);
+    Single<LoginResponse> skipUser(@Field("deviceId") String deviceId,
+                                   @Field("socialNetwork") String socialNetwork);
 
 
   //  @GET("search/movie")

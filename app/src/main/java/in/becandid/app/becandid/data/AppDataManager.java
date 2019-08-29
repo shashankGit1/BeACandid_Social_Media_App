@@ -184,11 +184,6 @@ public class AppDataManager implements DataManager {
     }
 
     @Override
-    public Single<LoginResponse> doSkipLoginResponse(String deviceId, String socialNetwork) {
-        return mApiHelper.doSkipLoginResponse(deviceId, socialNetwork);
-    }
-
-    @Override
     public Single<MainResponse> getFacebookFriends(String access_token, String limit) {
         return mApiHelper.getFacebookFriends(access_token, limit);
     }

@@ -80,7 +80,6 @@ public interface ApiHelper {
     Single<List<GroupUser>> getJoinedGroups(String user_id);
     Single<List<Message>> getChatMessages(String from_user_id, String user_id, String to_user_id, String token, String page);
     Single<SuccessResponse> deleteChat(String id_conversation_reply);
-    Single<LoginResponse> doSkipLoginResponse(String deviceId, String socialNetwork);
     Single<MainResponse> getFacebookFriends(String access_token, String limit);
     Single<MainResponse> getFacebookFriends02(String access_token, String limit, String after);
    // Single<List<Message>> getChatMessages02(String user_one, String user_two, String id_posts, String token, String page);

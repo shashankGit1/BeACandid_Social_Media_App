@@ -120,7 +120,7 @@ public class AppApiHelper implements ApiHelper {
                 .getObjectSingle(LoginResponse.class); */
 
         return  NetworkClient.getRetrofit().create(NetworkInterface.class)
-                .getMovies(deviceId, socialNetwork)
+                .skipUser(deviceId, socialNetwork)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
        // RetrofitFactory.getInstance().toSubscribe(observable, subscriber);
@@ -170,16 +170,6 @@ public class AppApiHelper implements ApiHelper {
     }
 
 // post facebook friends to database
-
-    @Override
-    public Single<LoginResponse> doSkipLoginResponse(String deviceId, String socialNetwork) {
-        return Rx2AndroidNetworking.post(ApiEndPoint.POST_LOGIN)
-                // .addHeaders(mApiHeader.getPublicApiHeader())
-                .addBodyParameter("deviceId", deviceId)
-                .addBodyParameter("socialNetwork", socialNetwork)
-                .build()
-                .getObjectSingle(LoginResponse.class);
-    }
 
     @Override
     public Single<ContactAddResponse> sendFacebookFriends(String id_user_name, String facebook_id) {
