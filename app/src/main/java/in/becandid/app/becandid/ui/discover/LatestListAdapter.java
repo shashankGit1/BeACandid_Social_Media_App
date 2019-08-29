@@ -219,7 +219,7 @@ public class LatestListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
         @Override
         protected void categoryClicked(View v) {
-            Intent intent = new Intent(v.getContext(), UserGroupDetails.class); // class for groups
+            Intent intent = new Intent(v.getContext(), UserGroupDetails.class);
             intent.putExtra(Constants.GROUPID, dataItem.getGroup_id());
             v.getContext().startActivity(intent);
         }
@@ -251,27 +251,13 @@ public class LatestListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 popupMenu = new PopupMenu(view.getContext(), view);
                 MenuInflater inflater = popupMenu.getMenuInflater();
                 inflater.inflate(R.menu.pop_menu, popupMenu.getMenu());
-                //    this.menu = popupMenu.getMenu(); Constant
+                //    this.menu = popupMenu.getMenu();
 
                 if (MySharedPreferences.getUserId(preferences).equals(dataItem.getIdUserName())){
                     popupMenu.getMenu().setGroupVisible(R.id.main_menu_group, true);
                 } else {
                     popupMenu.getMenu().setGroupVisible(R.id.main_menu_group, false);
                 }
-
-                // Whole group ID.
-                // Our own User ID
-                // User ID of the group Owner
-                // enter true or false. // query to search if group Owner ID of group equals current user Id
-
-
-
-              /*  if (MySharedPreferences.getUserId(preferences).equals(dataItem.())){
-                    popupMenu.getMenu().setGroupVisible(R.id.main_menu_group, true);
-                } else {
-                    popupMenu.getMenu().setGroupVisible(R.id.main_menu_group, false);
-                }
-                */
 
 
 

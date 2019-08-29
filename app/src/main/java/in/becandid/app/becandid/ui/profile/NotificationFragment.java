@@ -99,7 +99,6 @@ public class NotificationFragment extends BaseFragment implements NotificationMv
 
     @Override
     public void getNotification(List<NotificationPojo> response) {
-
         showRecycleWithDataFilled(response);
 
     }

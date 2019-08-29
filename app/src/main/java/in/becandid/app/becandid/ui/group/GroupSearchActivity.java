@@ -36,8 +36,6 @@ public class GroupSearchActivity extends BaseActivity implements GroupSearchMvpV
 
     @BindView(R.id.search_groups) protected EditText search_groups;
 
-    EditText search_groups02;
-
     private Autocomplete userAutocomplete;
     Drawable backgroundDrawable;
 

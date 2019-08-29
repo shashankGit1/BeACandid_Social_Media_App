@@ -17,6 +17,7 @@ package in.becandid.app.becandid.data.network;
 
 
 import com.androidnetworking.common.Priority;
+import com.google.android.gms.security.ProviderInstaller;
 import com.rx2androidnetworking.Rx2AndroidNetworking;
 
 import java.io.File;
@@ -38,8 +39,6 @@ import in.becandid.app.becandid.dto.ProfileMain;
 import in.becandid.app.becandid.dto.SuccessResponse;
 import in.becandid.app.becandid.dto.SuccessResponseChat;
 import in.becandid.app.becandid.dto.UserResponse;
-import in.becandid.app.becandid.retrofit.NetworkClient;
-import in.becandid.app.becandid.retrofit.NetworkInterface;
 import in.becandid.app.becandid.ui.chat02.model.Dialog;
 import in.becandid.app.becandid.ui.chat02.model.Message;
 import in.becandid.app.becandid.ui.group.CommunityGroupPojo;
@@ -49,7 +48,6 @@ import in.becandid.app.becandid.ui.group.InsertGroupPOJO;
 import in.becandid.app.becandid.ui.profile.NotificationPojo;
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by janisharali on 28/01/17.
@@ -113,18 +111,13 @@ public class AppApiHelper implements ApiHelper {
     // LOGIN REQUEST
     @Override
     public Single<LoginResponse> skipUser(String deviceId, String socialNetwork) {
-       /* return Rx2AndroidNetworking.post(ApiEndPoint.POST_LOGIN)
+        return Rx2AndroidNetworking.post(ApiEndPoint.POST_LOGIN)
+                // .addHeaders(mApiHeader.getPublicApiHeader())
+
                 .addBodyParameter("deviceId", deviceId)
                 .addBodyParameter("socialNetwork", socialNetwork)
                 .build()
-                .getObjectSingle(LoginResponse.class); */
-
-        return  NetworkClient.getRetrofit().create(NetworkInterface.class)
-                .getMovies(deviceId, socialNetwork)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread());
-       // RetrofitFactory.getInstance().toSubscribe(observable, subscriber);
-
+                .getObjectSingle(LoginResponse.class);
     }
 
     @Override

@@ -61,7 +61,6 @@ public final class ApiEndPoint {
     public static final String SEND_LIKE = BuildConfig.BASE_URL + "/send_like.php";
 
     public static final String POST_LOGIN = BuildConfig.BASE_URL + "/login.php";
-    public static final String POST_LOGIN_WITHOUT_BASE =  "login.php";
     public static final String UPDATE_GROUP = BuildConfig.BASE_URL + "/update_group.php";
     public static final String POST_OWNER_NOTIFICATION = BuildConfig.BASE_URL + "/postComments_notification.php"; // test
     public static final String POST_COMMENTS = BuildConfig.BASE_URL + "/postComments.php";

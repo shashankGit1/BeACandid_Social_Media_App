@@ -15,6 +15,4 @@ public class CategoryJoined {
         return id_categories;
     }
 
-
-
 }
