@@ -10,6 +10,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.text.format.DateUtils;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -42,6 +43,23 @@ public abstract class PostsImageCardViewHolder extends BaseViewHolder implements
     @BindView(R.id.list_item_posts_timeStamp_image)
     protected TextView timeStamp;
 
+    // new work
+    @BindView(R.id.llCommentViews_image)
+    protected LinearLayout llCommentViews_image;
+
+    @BindView(R.id.tvAllComments_image)
+    protected TextView tvAllComments_image;
+
+    @BindView(R.id.tvLastComment_image)
+    protected TextView tvLastComment_image;
+
+    @BindView(R.id.tvTimeOfComment_image)
+    protected TextView tvTimeOfComment_image;
+
+    @BindView(R.id.image_last_comment_image)
+    protected SimpleDraweeView image_last_comment_image;
+
+    ///////
     @BindView(R.id.list_item_posts_message_image)
     protected TextView postMessage;
 
