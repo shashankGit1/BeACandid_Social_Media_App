@@ -117,7 +117,7 @@ public class AppApiHelper implements ApiHelper {
                 .addBodyParameter("deviceId", deviceId)
                 .addBodyParameter("socialNetwork", socialNetwork)
                 .build()
-<<<<<<< HEAD
+..
                 .getObjectSingle(LoginResponse.class); */
 
         return  NetworkClient.getRetrofit().create(NetworkInterface.class)
@@ -126,9 +126,6 @@ public class AppApiHelper implements ApiHelper {
                 .observeOn(AndroidSchedulers.mainThread());
        // RetrofitFactory.getInstance().toSubscribe(observable, subscriber);
 
-=======
-                .getObjectSingle(LoginResponse.class);
->>>>>>> 38da18eb4dfb85395eb1d474ba9456ef2bbbff10
     }
 
     @Override
