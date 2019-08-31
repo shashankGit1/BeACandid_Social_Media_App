@@ -30,7 +30,9 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
         <activity android:name=".ui.group.GroupSearchActivity"
-            android:windowSoftInputMode="stateHidden"></activity>
+            android:windowSoftInputMode="stateHidden">
+
+        </activity>
         <activity android:name=".ui.profile.CustomUsernameActivity" />
         <activity android:name=".ui.filter.PremiumSearchResultActivity" />
 

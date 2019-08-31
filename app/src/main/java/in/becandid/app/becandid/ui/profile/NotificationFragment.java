@@ -17,17 +17,28 @@ import javax.inject.Inject;
 import butterknife.ButterKnife;
 import in.becandid.app.becandid.R;
 import in.becandid.app.becandid.di.component.ActivityComponent;
+import in.becandid.app.becandid.dto.PostsModel;
+import in.becandid.app.becandid.ui.InfiniteScrollProvider;
+import in.becandid.app.becandid.ui.OnLoadMoreListener;
 import in.becandid.app.becandid.ui.base.BaseFragment;
 import in.becandid.app.becandid.infrastructure.MySharedPreferences;
+import timber.log.Timber;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NotificationFragment extends BaseFragment implements NotificationMvpView {
+public class NotificationFragment extends BaseFragment implements NotificationMvpView, OnLoadMoreListener {
     private static final int REQUEST_VIEW_MESSAGE = 1;
     private RecyclerView rv;
     private View progressFrame;
+    private List<NotificationPojo>  mylist = new ArrayList<>();
     private View view;
+    private static final String PAGE_START = "1";
+    private boolean isLoading = false;
+    private boolean isLastPage = false;
+    private String currentPage = PAGE_START;
+    private List<NotificationPojo> response;
+
 
     private ArrayList data = new ArrayList<>();
 
@@ -72,8 +83,10 @@ public class NotificationFragment extends BaseFragment implements NotificationMv
         rv.setLayoutManager(llm);
         rv.addItemDecoration(new SimpleDividerItemDecoration(getActivity()));
         rv.setHasFixedSize(true);
+        InfiniteScrollProvider infiniteScrollProvider = new InfiniteScrollProvider();
+        infiniteScrollProvider.attach(rv,this);
 
-        mPresenter.getNotificationOnline(MySharedPreferences.getUserId(preferences), "1");
+        mPresenter.getNotificationOnline(MySharedPreferences.getUserId(preferences),currentPage);
 
      //   getNotification(MySharedPreferences.getUserId(preferences), "1");
       //  initializeData();
@@ -83,11 +96,15 @@ public class NotificationFragment extends BaseFragment implements NotificationMv
         return view;
 
     }
+    private void arraylistCurrent(List<NotificationPojo> response){
+        this.response = response;
+    }
 
 
 
     private void showRecycleWithDataFilled(final List<NotificationPojo> myList) {
-        NotificationAdapter adapter = new NotificationAdapter(myList);
+        mylist.addAll(myList);
+        NotificationAdapter adapter = new NotificationAdapter(mylist);
         rv.setAdapter(adapter);
     }
 
@@ -99,7 +116,7 @@ public class NotificationFragment extends BaseFragment implements NotificationMv
 
     @Override
     public void getNotification(List<NotificationPojo> response) {
-
+        arraylistCurrent(response);
         showRecycleWithDataFilled(response);
 
     }
@@ -109,6 +126,28 @@ public class NotificationFragment extends BaseFragment implements NotificationMv
         mPresenter.onDetach();
 
         super.onDestroyView();
+    }
+
+    @Override
+    public void onLoadMore() {
+        //mPresenter.getNotificationOnline(MySharedPreferences.getUserId(preferences), "2");
+        if (response.size()>0){
+            try {
+                int next = Integer.parseInt(currentPage);
+                next++;
+                currentPage =String.valueOf(next);
+                //progressBar.setVisibility(View.VISIBLE);
+
+                mPresenter.getNotificationOnline(MySharedPreferences.getUserId(preferences), currentPage);
+                //  loadNextPage();
+                isLoading = true;
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            Timber.d("nothing");
+        }
     }
 }
 

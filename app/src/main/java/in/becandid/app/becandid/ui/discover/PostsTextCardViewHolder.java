@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.text.format.DateUtils;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -29,8 +30,24 @@ public abstract class PostsTextCardViewHolder extends RecyclerView.ViewHolder im
   @BindView(R.id.list_item_posts_avatar_text)
   protected SimpleDraweeView  user_avatar;
 
+
     @BindView(R.id.list_item_post_userNickName_text)
     protected TextView user_name;
+
+    @BindView(R.id.llCommentViews_text)
+    protected LinearLayout llCommentViews_text;
+
+    @BindView(R.id.tvAllComments_text)
+    protected TextView tvAllComments_text;
+
+    @BindView(R.id.tvLastComment_text)
+    protected TextView tvLastComment_text;
+
+    @BindView(R.id.tvTimeOfComment_text)
+    protected TextView tvTimeOfComment_text;
+
+    @BindView(R.id.image_last_comment_text)
+    protected SimpleDraweeView image_last_comment_text;
 
     @BindView(R.id.list_item_posts_category_text)
     protected TextView category;
